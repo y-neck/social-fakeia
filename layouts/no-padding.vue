@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Header />
-    <slot class="bg-background px-site-spacing font-atkinson text-text"></slot>
-    <Footer />
+    <Header class="px-site-spacing" />
+    <slot class="bg-background font-atkinson text-text"></slot>
+    <Footer class="px-site-spacing"/>
   </div>
 </template>
 
