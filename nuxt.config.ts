@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -22,7 +23,19 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/css/main.css"],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), vueJsx()],
   },
   plugins: ["~/plugins/preamble.client.ts"],
+  modules: ["shadcn-nuxt", "@nuxt/image"],
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: "",
+    /**
+     * Directory that the component lives in.
+     * @default "./components/ui"
+     */
+    componentDir: "./components/ui",
+  },
 });
