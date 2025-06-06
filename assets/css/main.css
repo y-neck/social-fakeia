@@ -32,12 +32,34 @@
     --gap-lg: 1.5rem;
     --gap-xl: 2rem;
 
+    --m-xs: 0.25rem;
+    --m-sm: 0.5rem;
+    --m-md: 1rem;
+    --m-lg: 1.5rem;
+    --m-xl: 2rem;
+
+    --p-xs: 0.25rem;
+    --p-sm: 0.5rem;
+    --p-md: 1rem;
+    --p-lg: 1.5rem;
+    --p-xl: 2rem;
+
     --font-atkinson: 'Atkinson Hyperlegible Next', sans-serif;
     --font-atkinson-italic: 'Atkinson Hyperlegible Next Italic', sans-serif;
+
+    --text-fsize-h1: 2rem;
+    --text-fsize-h2: 1.5rem;
+    --text-fsize-h3: 1.25rem;
+    --text-fsize-p: 1rem;
+
 }
 
 @layer base {
     html {
         @apply bg-background min-h-full;
+    }
+
+    a:hover {
+        @apply text-accent transition-all duration-300 ease-in-out;
     }
 }
