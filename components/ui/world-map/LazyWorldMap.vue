@@ -1,3 +1,4 @@
+<!-- Inspira UI. (n.d.). World Map. https://inspira-ui.com/components/visualization/world-map -->
 <template>
   <div
     class="relative mx-auto aspect-[2/1] h-fit w-full max-w-screen-xl overflow-hidden rounded-lg bg-background"

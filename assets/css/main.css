@@ -4,13 +4,13 @@
 /* @custom-variant dark (&:is(.dark *)); */
 @tailwind utilities;
 
+/* BUG: Font assignment */
 @font-face {
     font-family: 'Atkinson Hyperlegible Next Italic';
     src: url('public/fonts/AtkinsonHyperlegibleNext-Italic-VariableFont_wght.ttf') format('ttf');
     font-weight: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'Atkinson Hyperlegible Next';
     src: url('public/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf') format('ttf');
