@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
     "@nuxt/image": "^1.10.0",
     "@nuxtjs/tailwindcss": "^7.0.0-beta.0",
     "@tailwindcss/vite": "^4.1.8",
@@ -28,6 +30,8 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@vitejs/plugin-vue-jsx": "^4.2.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.12",

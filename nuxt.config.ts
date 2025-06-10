@@ -21,7 +21,10 @@ export default defineNuxtConfig({
       },
     },
   },
-  css: ["~/assets/css/main.css"],
+  css: [
+    "~/assets/css/main.css",
+    "@fortawesome/fontawesome-svg-core/styles.css",
+  ],
   vite: {
     plugins: [tailwindcss(), vueJsx()],
   },
