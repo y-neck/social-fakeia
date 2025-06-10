@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="absolute bottom-0 flex h-fit w-full justify-between border-t border-text py-4 text-text"
+    class="bottom-0 mt-auto flex h-fit w-full justify-between border-t border-text py-4 text-text"
   >
     <div class="footer-div flex w-full flex-col items-center">
       <NuxtLink to="/impressum" class="footer-link">Impressum</NuxtLink>
