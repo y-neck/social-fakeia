@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <Header class="sticky top-0 px-site-spacing" />
-    <slot
-      class="flex min-h-screen flex-col bg-background px-site-spacing font-atkinson text-text"
-    ></slot>
-    <Footer />
+  <Header class="px-site-spacing" />
+  <div
+    class="bottom-0 flex flex-col gap-md bg-background px-site-spacing font-atkinson text-text"
+  >
+    <slot></slot>
   </div>
+  <Footer />
 </template>
 
 <style scoped></style>

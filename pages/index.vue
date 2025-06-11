@@ -35,12 +35,12 @@
         Desinformation auf Social Media geführt. Dies sind die Interview-Gäste:
       </p>
       <div class="interview-container">
-        <img
-          src="https://kovic.ch/wp-content/uploads/2021/03/TOM6808-Bearbeitet.jpeg"
+        <NuxtImg
+          src="/img/marko_kovic.webp"
           alt="Interview-Foto"
           class="interview-photo"
+          format="webp"
         />
-        <!-- TODO: Trace interview screenshots and insert -->
         <div class="interview-card">
           <h3 class="interviewee-name">Marko Ković</h3>
           <p class="interviewee-desc">
@@ -48,7 +48,9 @@
             Sozialwissenschaftler, Autor und Dozent hat Politikwissenschaft und
             Kommunikationswissenschaft studiert und setzt sich damit
             auseinander, wie die Gesellschaft funktioniert und wie sie
-            funktionieren sollte.
+            funktionieren sollte. <br /><br />
+            Hier geht es zum ganzen Interview:
+            <!-- TODO: Insert link -->
           </p>
         </div>
       </div>
@@ -89,31 +91,28 @@ import Callout from "~/components/layout/LazyCallout.vue";
 import Button from "~/components/common/LazyButton.vue";
 
 onMounted(() => {
-  const aboutBtn = document.getElementById("about-button");
-  if (aboutBtn) {
-    aboutBtn.addEventListener("click", () => {
-      window.open("/about", "_self");
-    });
-  }
-
+  /* Start btn */
   const startBtn = document.getElementById("start-experience-button");
   if (startBtn) {
     startBtn.addEventListener("click", () => {
       window.open("/intro", "_self");
     });
   }
+
+  /* About btn */
+  const aboutBtn = document.getElementById("about-button");
+  if (aboutBtn) {
+    aboutBtn.addEventListener("click", () => {
+      window.open("/about", "_self");
+    });
+  }
 });
 
 useSeoMeta({
-  title: "Social Fakeia",
-  ogTitle: "Home" /* Page title without branding */,
-  ogSiteName: "Social Fakeia",
-  ogType: "website",
+  title: "Social Fakeia – About",
+  ogTitle: "About" /* Page title without branding */,
   description: "",
   ogDescription: "",
-  creator: "Yannick Spriessler",
-  robots: "index, follow",
-  ogImage: "" /* Image for sharing */,
 });
 
 definePageMeta({

@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="flex min-h-screen flex-col bg-background font-atkinson text-text">
     <Header class="px-site-spacing" />
     <slot
-      class="flex min-h-screen flex-col bg-background font-atkinson text-text"
+      
     ></slot>
     <Footer class="px-site-spacing" />
   </div>
