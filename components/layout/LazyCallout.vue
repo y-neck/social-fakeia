@@ -5,10 +5,10 @@
     class="flex flex-col gap-md rounded-[16px] border-1 border-text bg-bg-transparent p-4 text-text"
   >
     <div v-if="icon || title" class="flex gap-md">
-      <h2 v-if="icon" class="callout-icon text-fsize-h2">
+      <span v-if="icon" class="callout-icon text-fsize-h2">
         <font-awesome-icon :icon="icon" style="font-size: 1.5rem" />
-      </h2>
-      <h2 v-if="title" class="callout-title text-fsize-h2 text-secondary">
+      </span>
+      <h2 v-if="title" class="callout-title text-fsize-h2 text-primary">
         {{ props.title }}
       </h2>
     </div>

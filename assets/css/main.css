@@ -11,6 +11,7 @@
     font-weight: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Atkinson Hyperlegible Next';
     src: url('public/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf') format('ttf');
@@ -21,10 +22,12 @@
 
 @theme {
     --color-text: rgb(238, 238, 238);
+    --color-text-transparent: rgba(238, 238, 238, 0.5);
     --color-bg-transparent: rgba(238, 238, 238, 0.3);
     --color-background: rgb(2, 11, 7);
     --color-primary: rgb(73, 192, 172);
     --color-secondary: rgb(62, 145, 126);
+    --color-secondary-transparent: rgba(62, 145, 126, 0.2);
     --color-accent: rgb(22, 208, 124);
 
     --padding-site-spacing: 4rem;
@@ -64,5 +67,22 @@
 
     a:hover {
         @apply text-accent transition-all duration-300 ease-in-out;
+    }
+
+    h1 {
+        @apply text-fsize-h1 text-primary;
+    }
+
+    h2 {
+        @apply text-fsize-h2 text-secondary;
+    }
+
+    h3 {
+        @apply text-fsize-h3 text-accent;
+    }
+
+    NuxtImg,
+    img {
+        pointer-events: none;
     }
 }
