@@ -57,7 +57,7 @@
     </div>
     <div id="interview-section" class="m-16 flex flex-col">
       <div class="interview-container">
-        <img src="" alt="Interview-Foto" class="interview-photo" />
+        <NuxtImg src="" alt="Interview-Foto" class="interview-photo" format="webp"/>
         <!-- TODO: Trace interview screenshots and insert -->
         <div class="interview-card">
           <h3 class="interviewee-name">Henriette Engbersen</h3>
