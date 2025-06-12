@@ -28,7 +28,10 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss(), vueJsx()],
   },
-  plugins: ["~/plugins/preamble.client.ts"],
+  plugins: [
+    "~/plugins/preamble.client.ts",
+    "~/plugins/youtube-player.client.ts",
+  ],
   modules: ["shadcn-nuxt", "@nuxt/image"],
   shadcn: {
     /**
