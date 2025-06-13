@@ -24,6 +24,7 @@
         textStyling="text-primary text-fsize-h2 font-bold"
         id="start-experience-button"
         class="self-center"
+        @click="navigateTo('/play/intro')"
       ></Button>
     </div>
   </div>
@@ -57,7 +58,12 @@
     </div>
     <div id="interview-section" class="m-16 flex flex-col">
       <div class="interview-container">
-        <NuxtImg src="" alt="Interview-Foto" class="interview-photo" format="webp"/>
+        <NuxtImg
+          src=""
+          alt="Interview-Foto"
+          class="interview-photo"
+          format="webp"
+        />
         <!-- TODO: Trace interview screenshots and insert -->
         <div class="interview-card">
           <h3 class="interviewee-name">Henriette Engbersen</h3>
@@ -79,6 +85,7 @@
           id="about-button"
           textStyling="text-fsize-p"
           class="self-center"
+          @click="navigateTo('about')"
         ></Button>
       </Callout>
     </div>
@@ -89,24 +96,6 @@
 import WorldMap from "~/components/ui/world-map/LazyWorldMap.vue";
 import Callout from "~/components/layout/LazyCallout.vue";
 import Button from "~/components/common/LazyButton.vue";
-
-onMounted(() => {
-  /* Start btn */
-  const startBtn = document.getElementById("start-experience-button");
-  if (startBtn) {
-    startBtn.addEventListener("click", () => {
-      window.open("/intro", "_self");
-    });
-  }
-
-  /* About btn */
-  const aboutBtn = document.getElementById("about-button");
-  if (aboutBtn) {
-    aboutBtn.addEventListener("click", () => {
-      window.open("/about", "_self");
-    });
-  }
-});
 
 useSeoMeta({
   title: "Social Fakeia – About",

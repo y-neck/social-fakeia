@@ -40,26 +40,33 @@
         ><LazyVideoPlayer
           video-id="g2P5muIXgNU"
           styling="w-3/4 self-center"
-        /><!-- TODO: Replace video id --></ClientOnly
-      >
+        /><!-- TODO: Replace video id -->
+      </ClientOnly>
     </section>
     <section id="download-section" class="items-center pb-4">
       <h2>Download</h2>
-      <p id="download-text">
+      <p class="px-16 text-center text-accent">
+        Bald kannst du hier die Thesis herunterladen! Wenn du jetzt schon
+        Interesse daran hast, schreibe mir gerne eine Email, um sie dann sofort
+        zu erhalten, sobald sie fertig ist.
+      </p>
+      <!--     <p id="download-text">
         Hier kannst du die Thesis als PDF oder Bib-Eintrag herunterladen:
       </p>
-      <div id="download-btns" class="flex w-full justify-center gap-md">
+       <div id="download-btns" class="flex w-full justify-center gap-md">
         <Button content="PDF" id="download-button" textStyling="text-fsize-p" />
         <Button
           content="Bib-Referenz"
           id="reference-button"
           textStyling="text-fsize-p"
+          @click="toggleReference"
         />
-        <!-- TODO: PDF -->
-      </div>
+        TODO: PDF
+      </div> -->
       <div
+        v-show="referenceBtnClicked"
         id="reference-section"
-        class="hidden w-3/4 gap-2 self-center rounded-lg border-2 border-text bg-secondary-transparent p-8"
+        class="flex w-3/4 flex-col gap-2 self-center rounded-lg border-2 border-text bg-secondary-transparent p-8"
       >
         <!-- TODO: Nice to have: Copy fn -->
         <p class="text-text-transparent">BIB</p>
@@ -177,20 +184,15 @@ import Button from "~/components/common/LazyButton.vue";
 import LazyCallout from "~/components/layout/LazyCallout.vue";
 import LazyVideoPlayer from "~/components/layout/LazyVideoPlayer.vue";
 
-onMounted(() => {
-  /* Download btn */
-  const downloadBtn = document.querySelector("#download-button");
-  downloadBtn?.addEventListener("click", () => {
-    window.open("/files/thesis.pdf", "_blank");
-  });
-
-  /* Reference btn */
-  const referenceSection = document.querySelector("#reference-section");
-  const referenceBtn = document.querySelector("#reference-button");
-  referenceBtn?.addEventListener("click", () => {
-    referenceSection?.classList.toggle("hidden");
-  });
-});
+/* Reference btn */
+const referenceBtnClicked = ref(false);
+function toggleReference() {
+  referenceBtnClicked.value = !referenceBtnClicked.value;
+}
+/* Download btn */
+const downloadBtn = () => {
+  window.open("/files/thesis.pdf", "_blank");
+};
 
 useSeoMeta({
   title: "Social Fakeia – About",
