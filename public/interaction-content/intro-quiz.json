@@ -1,0 +1,21 @@
+{
+    "title": "Was machst du in dieser Situation?",
+    "answers": [
+        {
+            "answer": "Ich schicke den Inhalt an Bekannte, vielleicht wissen sie mehr.",
+            "correct": false
+        },
+        {
+            "answer": "Ich hinterfrage den Inhalt und versuche, mich weiter zu informieren.",
+            "correct": true
+        },
+        {
+            "answer": "Ich glaube dem Video.",
+            "correct": false
+        },
+        {
+            "answer": "Ich teile das Video online, schliesslich handelt es sich um eine wichtige Information.",
+            "correct": false
+        }
+    ]
+}

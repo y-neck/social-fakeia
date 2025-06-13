@@ -22,6 +22,7 @@
 
 @theme {
     --color-text: rgb(238, 238, 238);
+    --color-text-invert: rgb(17, 17, 17);
     --color-text-transparent: rgba(238, 238, 238, 0.5);
     --color-bg-transparent: rgba(238, 238, 238, 0.3);
     --color-background: rgb(2, 11, 7);
