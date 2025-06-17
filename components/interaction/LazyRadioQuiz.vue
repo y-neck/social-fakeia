@@ -76,12 +76,12 @@ onMounted(() => {
   padding: 0.5rem 1rem;
   width: 100%;
   color: var(--color-text-invert);
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   border-radius: 0.5rem;
   text-align: left;
   border-radius: 1rem;
 }
 .quiz-button:hover {
-  background-color: var(--color-secondary);
+  background-color: var(--color-accent);
 }
 </style>

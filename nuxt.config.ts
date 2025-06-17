@@ -11,7 +11,6 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-
   app: {
     head: {
       charset: "utf-8",
@@ -32,7 +31,7 @@ export default defineNuxtConfig({
     "~/plugins/preamble.client.ts",
     "~/plugins/youtube-player.client.ts",
   ],
-  modules: ["shadcn-nuxt", "@nuxt/image"],
+  modules: ["shadcn-nuxt", "@nuxt/image", "@nuxt/ui"],
   shadcn: {
     /**
      * Prefix for all the imported component
@@ -43,5 +42,8 @@ export default defineNuxtConfig({
      * @default "./components/ui"
      */
     componentDir: "./components/ui",
+  },
+  ui: {
+    colorMode: false,
   },
 });

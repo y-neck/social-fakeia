@@ -1,7 +1,9 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <UApp>
+    <NuxtLayout class="bg-background">
+      <NuxtPage />
+    </NuxtLayout>
+  </UApp>
 </template>
 
 <script>

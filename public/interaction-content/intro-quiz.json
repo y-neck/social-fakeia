@@ -1,21 +1,27 @@
 {
+    "quizId": "intro-quiz",
     "title": "Was machst du in dieser Situation?",
+    "topic": "general",
     "answers": [
         {
             "answer": "Ich schicke den Inhalt an Bekannte, vielleicht wissen sie mehr.",
-            "correct": false
+            "correct": 0,
+            "correctAnswer": "Falsch. Verschicke niemals Inhalte, bei denen du nicht sicher bist, ob es sich um Falschinformation handelt."
         },
         {
             "answer": "Ich hinterfrage den Inhalt und versuche, mich weiter zu informieren.",
-            "correct": true
+            "correct": 1,
+            "correctAnswer": "Richtig. Informiere dich erstmals weiter, bevor du den Inhalt teilst."
         },
         {
             "answer": "Ich glaube dem Video.",
-            "correct": false
+            "correct": 0,
+            "correctAnswer": "Falsch. Versuche dich weiter zu informieren."
         },
         {
             "answer": "Ich teile das Video online, schliesslich handelt es sich um eine wichtige Information.",
-            "correct": false
+            "correct": 0,
+            "correctAnswer": "Falsch. Verschicke niemals Inhalte, bei denen du nicht sicher bist, ob es sich um Falschinformation handelt."
         }
     ]
 }

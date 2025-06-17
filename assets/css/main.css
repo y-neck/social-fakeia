@@ -62,6 +62,10 @@
 }
 
 @layer base {
+    :root{
+        @apply bg-background;
+    }
+    
     html {
         @apply bg-background min-h-full;
     }
@@ -85,5 +89,11 @@
     NuxtImg,
     img {
         pointer-events: none;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 }

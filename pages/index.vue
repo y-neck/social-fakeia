@@ -50,7 +50,10 @@
             Kommunikationswissenschaft studiert und setzt sich damit
             auseinander, wie die Gesellschaft funktioniert und wie sie
             funktionieren sollte. <br /><br />
-            Hier geht es zum ganzen Interview:
+            <NuxtLink to="https://youtu.be/MTyXPrV_4B0" target="_blank" class="underline"
+              >Hier</NuxtLink
+            >
+            geht es zum ganzen Interview.
             <!-- TODO: Insert link -->
           </p>
         </div>
