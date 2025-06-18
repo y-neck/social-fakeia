@@ -10,44 +10,39 @@
       :confirm-btn-action="closeAlert"
     />
     <ProgressBar />
-    <section id="msg-section" class="flex flex-col gap-xl">
-      <h1 class="sr-only">Intro</h1>
-      <span class="msg-bubble animation-target"
-        >Stelle dir vor, du sitzt gedankenverloren im Zug und scrollst durch
-        deinen Instagram-Feed.</span
-      >
-      <!-- TODO: Add animation -->
-      <span class="msg-bubble animation-target"
-        >Katzenvideos, Memes, ein Post von deiner Schule oder deiner
-        Arbeitsstelle...</span
-      >
-      <span class="msg-bubble animation-target"
-        >Jeden davon schaust du dir nur kurz an.</span
-      ><span class="msg-bubble animation-target"
-        >Da erscheint plötzlich ein Video, welches deine Aufmerksamkeit auf sich
-        zieht:
-      </span>
-      <span class="msg-bubble animation-target">
-        Im Video wird behauptet, dass 5G-Strahlung von Funkantennen Krebs
-        verursache.</span
-      ><span class="msg-bubble animation-target">
-        Du bist dir unsicher; eigentlich hältst du es nicht für wahr... aber
-        was, wenn es vielleicht doch stimmt?
-      </span>
-    </section>
-    <section
-      id="intro-quiz-section"
-      class="animation-target flex w-full flex-col items-center justify-center gap-md"
+    <transition-group
+      v-if="alertClosed"
+      tag="div"
+      name="stagger"
+      class="flex flex-col gap-xl"
+      appear
     >
-      <RadioQuiz interaction-path="/interaction-content/intro-quiz.json" />
-      <LazyButton
-        v-if="!proceedBtnClicked"
-        content="Ich möchte mehr über Desinformation erfahren"
-        id="proceed-button"
-        text-styling="text-fSize-p"
-        @click="proceed"
-      />
-    </section>
+      <!-- appear: trigger animation on first render -->
+      <h1 class="sr-only">Intro</h1>
+      <span
+        v-for="(msg, i) in bubbleMessages"
+        class="msg-bubble animation-target"
+        :key="`msg-${i}`"
+        :style="{ '--index': i }"
+      >
+        {{ msg }}
+      </span>
+      <section
+        id="intro-quiz-section"
+        class="animation-target flex w-full flex-col items-center justify-center gap-md"
+        :style="{ '--index': bubbleMessages.length }"
+        :key="`quiz-${bubbleMessages.length}`"
+      >
+        <RadioQuiz interaction-path="/interaction-content/intro-quiz.json" />
+        <LazyButton
+          v-if="!proceedBtnClicked"
+          content="Ich möchte mehr über Desinformation erfahren"
+          id="proceed-button"
+          text-styling="text-fSize-p"
+          @click="proceed"
+        />
+      </section>
+    </transition-group>
     <div id="part-two" v-show="proceedBtnClicked">
       <section id="self-assessment-section fit-content">
         <h2 class="text-center">
@@ -102,7 +97,14 @@ import LazyButton from "~/components/common/LazyButton.vue";
 import RadioQuiz from "~/components/interaction/LazyRadioQuiz.vue";
 import LazyVideoPlayer from "~/components/layout/LazyVideoPlayer.vue";
 
-/* TODO: Animation */
+const bubbleMessages = [
+  "Stelle dir vor, du sitzt gedankenverloren im Zug und scrollst durch deinen Instagram‑Feed.",
+  "Katzenvideos, Memes, ein Post von deiner Schule oder deiner Arbeitsstelle…",
+  "Jeden davon schaust du dir nur kurz an.",
+  "Da erscheint plötzlich ein Video, welches deine Aufmerksamkeit auf sich zieht:",
+  "Im Video wird behauptet, dass 5G‑Strahlung von Funkantennen Krebs verursache.",
+  "Du bist dir unsicher; eigentlich hältst du es nicht für wahr… aber was, wenn es vielleicht doch stimmt?",
+];
 
 /* Alert */
 const router = useRouter();
@@ -152,5 +154,24 @@ definePageMeta({
   background-color: var(--color-primary);
   color: var(--color-text-invert);
   width: fit-content;
+}
+
+/* https://vuejs.org/guide/built-ins/transition-group.html */
+.stagger-enter-active {
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+.stagger-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.stagger-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Stagger via custom property --index */
+.stagger-enter-active.animation-target {
+  transition-delay: calc(4s * var(--index));
 }
 </style>
