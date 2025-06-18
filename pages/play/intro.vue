@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-col gap-md">
     <Alert
-      v-show="!alertClosed"
+      v-if="!alertShown && !alertClosed"
       ref="start-alert"
       alert-description="Mit der Nutzung dieser Website stimmst du zu, dass die Seite für die volle Funktionalität Daten lokal auf deinem Gerät speichert. Mit dem Schliessen dieses Browser-Tabs werden diese wieder gelöscht."
       cancel-btn-text="Abbrechen"
-      confirm-btn-text="Weiter"
+      confirm-btn-text="Einverstanden"
       :cancel-btn-action="navigateHome"
       :confirm-btn-action="closeAlert"
     />
@@ -16,6 +16,7 @@
         >Stelle dir vor, du sitzt gedankenverloren im Zug und scrollst durch
         deinen Instagram-Feed.</span
       >
+      <!-- TODO: Add animation -->
       <span class="msg-bubble animation-target"
         >Katzenvideos, Memes, ein Post von deiner Schule oder deiner
         Arbeitsstelle...</span
@@ -24,8 +25,8 @@
         >Jeden davon schaust du dir nur kurz an.</span
       ><span class="msg-bubble animation-target"
         >Da erscheint plötzlich ein Video, welches deine Aufmerksamkeit auf sich
-        zieht: </span
-      >
+        zieht:
+      </span>
       <span class="msg-bubble animation-target">
         Im Video wird behauptet, dass 5G-Strahlung von Funkantennen Krebs
         verursache.</span
@@ -106,9 +107,16 @@ import LazyVideoPlayer from "~/components/layout/LazyVideoPlayer.vue";
 /* Alert */
 const router = useRouter();
 const alertClosed = ref(false);
+const alertShown = ref(false);
+
+onMounted(() => {
+  alertShown.value = sessionStorage.getItem("alertShown") === "true";
+});
 
 function closeAlert() {
   alertClosed.value = true;
+  sessionStorage.setItem("alertShown", "true");
+  alertShown.value = true;
 }
 function navigateHome() {
   router.push("/");
