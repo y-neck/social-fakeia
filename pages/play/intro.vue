@@ -33,7 +33,7 @@
         :style="{ '--index': bubbleMessages.length }"
         :key="`quiz-${bubbleMessages.length}`"
       >
-        <RadioQuiz interaction-path="/interaction-content/intro-quiz.json" />
+        <RadioQuiz interaction-path="intro-quiz" />
         <LazyButton
           v-if="!proceedBtnClicked"
           content="Ich möchte mehr über Desinformation erfahren"
@@ -74,6 +74,7 @@
           dich, die Gesellschaft und unser generelles Miteinander.
         </p>
         <LazyVideoPlayer video-id="" />
+        <!-- TODO: Video "Relevanz" -->
         <p>
           Auf den nächsten Seiten erfährst du mehr über Desinformation auf
           Social-Media-Plattformen in der Schweiz.
@@ -82,7 +83,7 @@
           content="Weiter"
           textStyling="text-fSize-p"
           class="self-center"
-          @click="navigateTo('/play/current_disinformation')"
+          @click="navigateTo('/play/definition')"
         />
       </section>
     </div>

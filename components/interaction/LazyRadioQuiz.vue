@@ -1,6 +1,6 @@
 <template>
   <div
-    class="radio-quiz flex w-3/4 flex-col items-center gap-md rounded-xl border-2 border-text p-8"
+    class="radio-quiz flex w-3/4 flex-col items-center gap-md rounded-xl border-2 border-text p-8 mx-auto"
   >
     <h2 class="quiz-title text-primary">{{ quiz?.title }}</h2>
     <div class="quiz-btn-container flex flex-col gap-xs" ref="quizBtnContainer">
@@ -39,7 +39,9 @@ const selectedAnswer = ref<QuizAnswer | null>(null);
 /* Load quiz from JSON */
 async function loadQuiz() {
   try {
-    const response = await fetch(props.interactionPath);
+    const response = await fetch(
+      `/interaction-content/${props.interactionPath}.json`,
+    );
     if (!response.ok)
       throw new Error(
         ` ${response.statusText},
