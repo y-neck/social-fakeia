@@ -50,11 +50,13 @@
             Kommunikationswissenschaft studiert und setzt sich damit
             auseinander, wie die Gesellschaft funktioniert und wie sie
             funktionieren sollte. <br /><br />
-            <NuxtLink to="https://youtu.be/MTyXPrV_4B0" target="_blank" class="underline"
+            <NuxtLink
+              to="https://youtu.be/MTyXPrV_4B0"
+              target="_blank"
+              class="underline"
               >Hier</NuxtLink
             >
             geht es zum ganzen Interview.
-            <!-- TODO: Insert link -->
           </p>
         </div>
       </div>
@@ -62,15 +64,21 @@
     <div id="interview-section" class="m-16 flex flex-col">
       <div class="interview-container">
         <NuxtImg
-          src=""
+          src="/img/henriette_engbersen.webp"
           alt="Interview-Foto"
           class="interview-photo"
           format="webp"
         />
-        <!-- TODO: Trace interview screenshots and insert -->
         <div class="interview-card">
           <h3 class="interviewee-name">Henriette Engbersen</h3>
-          <p class="interviewee-desc">Lorem Ipsum</p>
+          <p class="interviewee-desc">
+            Henriette Engbersen ist Bereichsleiterin «Public Value» bei der SRG.
+            Sie ist dabei involviert in verschiedenen Aufklärungsprojekten zu
+            Desinformation. Davor war sie 20 Jahre als Journalistin tätig.
+            <br /><br />
+            <NuxtLink to="https://youtu.be/fHrg807W0eA" target="_blank" class="underline">Hier</NuxtLink>
+            geht es zum ganzen Interview.
+          </p>
         </div>
       </div>
     </div>
