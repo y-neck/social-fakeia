@@ -1,0 +1,22 @@
+{
+    "quizId": "definition-quiz",
+    "title": "Was ist kein Merkmal für aktuelle Desinformation?",
+    "topic": "current-disinformation",
+    "answers": [
+        {
+            "answer": "Desinformation ist eine Art von Fehlinformation.",
+            "correct": 0,
+            "correctAnswer": "Falsch. «Desinformation ist [eine Art von] Fehlinformation, die aber nicht aufrichtig ist.»"
+        },
+        {
+            "answer": "Der Inhalt spricht über ein aktuelles Thema",
+            "correct": 0,
+            "correctAnswer": "Falsch. Aktuelle Desinformation bezieht sich auf Themen, welche momentan wichtig sind und eine grosse Auswirkung auf die Gesellschaft haben können."
+        },
+        {
+            "answer": "Der falsche Inhalt wird versehentlich verbreitet.",
+            "correct": 1,
+            "correctAnswer": "Richtig. Wird ein wissenschaftlich falscher Inhalt versehentlich verbreitet, spricht man von Misinformation. Desinformation erfordert eine mutwillige Verbreitung."
+        }
+    ]
+}
