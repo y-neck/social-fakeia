@@ -58,6 +58,7 @@ function initPlayer() {
         playsinline: 1, // play inline instead of fullscreen on mobile devices
         cc_lang_pref: "de", // CC Language
         enablejsapi: 1, // enable JS API control
+        rel: 0,
       },
       events: {
         onReady: onPlayerReady,
