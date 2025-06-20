@@ -1,17 +1,19 @@
 <!-- Google for Developers. (n.d.). YouTube Player API Reference for iframe Embeds | YouTube IFrame Player API. https://developers.google.com/youtube/iframe_api_reference -->
 
 <template>
-  <div :class="['video-frame', props.styling]">
-    <div ref="playerContainer" class="aspect-video w-full"></div>
-    <div class="video-information flex h-fit min-h-8 w-full">
-      <span
-        v-for="(comment, i) in visibleComments"
-        :key="i"
-        class="video-information-content border-l-2 border-accent px-4"
-        >{{ comment.text }}</span
-      >
+  <ClientOnly>
+    <div :class="['video-frame', props.styling]">
+      <div ref="playerContainer" class="aspect-video w-full"></div>
+      <div class="video-information flex h-fit min-h-8 w-full">
+        <span
+          v-for="(comment, i) in visibleComments"
+          :key="i"
+          class="video-information-content border-l-2 border-accent px-4"
+          >{{ comment.text }}</span
+        >
+      </div>
     </div>
-  </div>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">

@@ -36,12 +36,10 @@
         einordnen zu können. Wenn du Rückmeldungen dazu hast, darfst du dich
         gerne melden.
       </p>
-      <ClientOnly
-        ><LazyVideoPlayer
-          video-id="g2P5muIXgNU"
-          styling="w-3/4 self-center"
-        /><!-- TODO: Replace video id -->
-      </ClientOnly>
+      <LazyVideoPlayer
+        video-id="g2P5muIXgNU"
+        styling="w-3/4 self-center"
+      /><!-- TODO: Replace video id -->
     </section>
     <section id="download-section" class="items-center pb-4">
       <h2>Download</h2>
