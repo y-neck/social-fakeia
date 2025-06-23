@@ -33,7 +33,12 @@ const visibleComments = ref<Array<{ time: number; text: string }>>([]);
 
 let intervalId: number;
 
-// load comments from json
+/**
+ * fetches comments from a JSON file and updates the {@link comments} state with it.
+ * @async
+ * @var {string} scriptPath - path to JSON file
+ * @returns {Array<{ time: number; text: string }>} – comments with timestamps in seconds and text to be displayed
+ */
 async function loadComments() {
   if (!props.scriptPath) {
     // DEBUG:
@@ -47,7 +52,13 @@ async function loadComments() {
 }
 
 /* Player */
-// initialize player
+/**
+ * Initializes the YouTube player with the given video ID and settings.
+ * @property {string} videoId - video ID of the youtube video
+ * @property {object} playerVars - player settings as per the YouTube API
+ * @see https://developers.google.com/youtube/iframe_api_reference
+ * @returns {YT.Player} – the initialized player
+ */
 function initPlayer() {
   if (playerContainer.value && !player) {
     player = new YT.Player(playerContainer.value, {

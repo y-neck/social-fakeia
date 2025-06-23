@@ -38,7 +38,7 @@ const selectedAnswer = ref<SelectQuizAnswer | null>(null);
 
 /**
  *  Load quiz from JSON
- * @var {string} interactionPath - path to JSON file holding the quiz data
+ * @property {string} interactionPath - path to JSON file holding the quiz data
  * @returns quiz data
  */
 async function loadQuiz() {
