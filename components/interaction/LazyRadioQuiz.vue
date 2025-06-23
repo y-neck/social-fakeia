@@ -1,6 +1,6 @@
 <template>
   <div
-    class="radio-quiz flex w-3/4 flex-col items-center gap-md rounded-xl border-2 border-text p-8 mx-auto"
+    class="radio-quiz mx-auto flex w-3/4 flex-col items-center gap-md rounded-xl border-2 border-text p-8"
   >
     <h2 class="quiz-title text-primary">{{ quiz?.title }}</h2>
     <div class="quiz-btn-container flex flex-col gap-xs" ref="quizBtnContainer">
@@ -22,8 +22,8 @@
 
 <script setup lang="ts">
 import type {
-  InteractionContent,
-  QuizAnswer,
+  SelectInteractionContent,
+  SelectQuizAnswer,
   RadioQuiz,
 } from "~/model/interaction-content";
 
@@ -34,9 +34,13 @@ const props = defineProps<{
 // current quiz from JSON
 const quiz = ref<RadioQuiz | null>(null);
 const answered = ref(false);
-const selectedAnswer = ref<QuizAnswer | null>(null);
+const selectedAnswer = ref<SelectQuizAnswer | null>(null);
 
-/* Load quiz from JSON */
+/**
+ *  Load quiz from JSON
+ * @var {string} interactionPath - path to JSON file holding the quiz data
+ * @returns quiz data
+ */
 async function loadQuiz() {
   try {
     const response = await fetch(
@@ -55,8 +59,12 @@ async function loadQuiz() {
 
 const quizBtnContainer = ref<HTMLElement | null>(null);
 
-/* Store selection in sessionStorage */
-function select(a: QuizAnswer) {
+/**
+ * Store selection in sessionStorage
+ * @var {string} key - key to store answers in sessionStorage
+ * @var {string} value - store if the quiz was answered correctly
+ */
+function select(a: SelectQuizAnswer) {
   const key = `${quiz.value?.quizId ?? "quiz"}:${quiz.value?.title}`;
   const value = JSON.stringify(a.correct);
   // store kv pair
