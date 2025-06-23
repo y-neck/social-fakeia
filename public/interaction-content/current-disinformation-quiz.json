@@ -1,0 +1,31 @@
+{
+    "quizId": "current-disinformation-quiz",
+    "title": "Welche Motivationen gibt es für die Verbreitung von Desinformation?",
+    "topic": "current-disinformation",
+    "answers": [
+        {
+            "answer": "Durch Desinformation kann eine Gesellschaft geschwächt werden",
+            "correct": 1
+        },
+        {
+            "answer": "Wichtige Themen erhalten mehr Aufmerksamkeit",
+            "correct": 0
+        },
+        {
+            "answer": "Finanzielle Vorteile gegenüber anderen",
+            "correct": 0
+        },
+        {
+            "answer": "Finanzieller Gewinn ",
+            "correct": 1
+        },
+        {
+            "answer": "Politische Vorteile gegenüber anderen",
+            "correct": 1
+        },
+        {
+            "answer": "Das eigene Umfeld ist besser informiert",
+            "correct": 0
+        }
+    ]
+}
