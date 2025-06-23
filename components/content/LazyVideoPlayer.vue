@@ -127,3 +127,5 @@ function onPlayerStateChange(event: any) {
   color: var(--color-accent) !important;
 }
 </style>
+
+<!-- TODO: Add skeleton -->
