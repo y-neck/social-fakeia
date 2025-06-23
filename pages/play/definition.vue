@@ -1,6 +1,5 @@
 <template>
   <div class="flex flex-col gap-md">
-    <ProgressBar />
     <h1>Aktuelle Desinformation</h1>
     <section id="definition-section">
       <LazyCallout
@@ -113,7 +112,7 @@ import ProgressBar from "~/components/layout/ProgressBar.vue";
 import LazyCallout from "~/components/layout/LazyCallout.vue";
 import LinkPreview from "~/components/ui/link-preview/LinkPreview.vue";
 import Quote from "~/components/Other/Quote.vue";
-import LazyVideoPlayer from "~/components/layout/LazyVideoPlayer.vue";
+import LazyVideoPlayer from "~/components/content/LazyVideoPlayer.vue";
 import LazyRadioQuiz from "~/components/interaction/LazyRadioQuiz.vue";
 import LazyButton from "~/components/common/LazyButton.vue";
 
@@ -125,6 +124,7 @@ useSeoMeta({
 });
 definePageMeta({
   title: "Definition",
+  layout: "game",
 });
 </script>
 

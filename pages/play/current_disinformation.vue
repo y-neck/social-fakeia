@@ -1,6 +1,5 @@
 <template>
   <div class="flex flex-col gap-md">
-    <ProgressBar />
     <h1 class="sr-only">Aktuelle Desinformation</h1>
     <p id="introduction">
       Seit vor etwa 20 Jahren die Social-Media-Plattformen aufgekommen sind,
@@ -219,6 +218,7 @@ useSeoMeta({
 });
 definePageMeta({
   title: "Aktuelle Desinformation",
+  layout: "game",
 });
 </script>
 

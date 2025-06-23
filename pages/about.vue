@@ -180,7 +180,7 @@
 <script setup lang="ts">
 import Button from "~/components/common/LazyButton.vue";
 import LazyCallout from "~/components/layout/LazyCallout.vue";
-import LazyVideoPlayer from "~/components/layout/LazyVideoPlayer.vue";
+import LazyVideoPlayer from "~/components/content/LazyVideoPlayer.vue";
 
 /* Reference btn */
 const referenceBtnClicked = ref(false);

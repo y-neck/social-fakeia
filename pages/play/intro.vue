@@ -9,7 +9,6 @@
       :cancel-btn-action="navigateHome"
       :confirm-btn-action="closeAlert"
     />
-    <ProgressBar />
     <transition-group
       v-if="alertClosed"
       tag="div"
@@ -82,7 +81,7 @@
         <LazyButton
           content="Weiter"
           textStyling="text-fSize-p"
-          class="self-center"
+          class="mx-auto"
           @click="navigateTo('/play/definition')"
         />
       </section>
@@ -96,7 +95,7 @@ import { useRouter } from "vue-router";
 import ProgressBar from "~/components/layout/ProgressBar.vue";
 import LazyButton from "~/components/common/LazyButton.vue";
 import RadioQuiz from "~/components/interaction/LazyRadioQuiz.vue";
-import LazyVideoPlayer from "~/components/layout/LazyVideoPlayer.vue";
+import LazyVideoPlayer from "~/components/content/LazyVideoPlayer.vue";
 
 const bubbleMessages = [
   "Stelle dir vor, du sitzt gedankenverloren im Zug und scrollst durch deinen Instagram‑Feed.",
@@ -144,6 +143,7 @@ useSeoMeta({
 });
 definePageMeta({
   title: "Intro",
+  layout: "game",
 });
 </script>
 
