@@ -5,11 +5,11 @@
       v-for="item in tabs"
       :key="item.path"
       @click="go(item.path)"
-      class="flex-1 rounded-md px-4 py-1 transition-colors"
+      class="flex-1 cursor-pointer rounded-md px-4 py-1 transition-colors"
       :class="[
         currentPath === item.path
           ? 'bg-secondary text-text-invert'
-          : 'bg-bg-transparent hover:text-text-invert hover:bg-accent',
+          : 'bg-bg-transparent hover:bg-accent hover:text-text-invert',
       ]"
     >
       {{ item.label }}
