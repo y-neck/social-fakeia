@@ -1,0 +1,22 @@
+{
+    "quizId": "audiovisual-disinformation-quiz",
+    "title": "Was macht audiovisuelle Desinformation besonders gefährlich?",
+    "topic": "audiovisual-disinformation",
+    "answers": [
+        {
+            "answer": "Audiovisuelle Desinformation ist nicht gefährlicher als andere Arten von Desinformation",
+            "correct": 0,
+            "correctAnswer": "Falsch. Audiovisuelle Desinformation ist besonders gefährlich, weil sie emotionaler wirkt."
+        },
+        {
+            "answer": "Audiovisuelle Desinformation steht oft alleine ohne Einordnung.",
+            "correct": 0,
+            "correctAnswer": "Falsch. Oftmals werden echte Videos oder Bilder durch Begleittext falsch dargestellt."
+        },
+        {
+            "answer": "Audiovisuelle Desinformation wird eher für echt befunden.",
+            "correct": 1,
+            "correctAnswer": "Richtig."
+        }
+    ]
+}
