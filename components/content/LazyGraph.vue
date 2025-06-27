@@ -68,6 +68,7 @@ async function loadConfig() {
   const primary = root.getPropertyValue("--color-primary").trim();
   const text = root.getPropertyValue("--color-text").trim();
   const background = root.getPropertyValue("--color-background").trim();
+  const textInverted = root.getPropertyValue("--color-text-invert").trim();
   const textTransparent = root
     .getPropertyValue("--color-text-transparent")
     .trim();
@@ -80,6 +81,7 @@ async function loadConfig() {
   chartOptions.value = {
     ...options,
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       ...(options.plugins || {}),
       title: {
