@@ -82,6 +82,47 @@
         Wut vermitteln.
       </p>
     </section>
+    <section id="distribution">
+      <h2>Verbreitung</h2>
+      <p>
+        <LinkPreview
+          url="https://doi.org/10.1108/JPBM-12-2018-2155"
+          class="underline"
+        >
+          Desinformation wird durch verschiedene Personengruppen</LinkPreview
+        >
+        verbreitet. Diese lassen sich einteilen in Einzelpersonen und
+        Kollektivakteure, wie beispielsweise Organisationen oder Institutionen.
+        <br />
+        In den meisten Fällen handelt es sich bei den verbreitenden Accounts um
+        Einzelpersonen. Diese gehören unterschiedlichen gesellschaftlichen
+        Gruppen an. Besonders Akteure aus Politik, Kultur (unter anderem auch
+        Influencerinnen und Influencer) und Journalismus verbreiten
+        Desinformation.
+      </p>
+      <LazyGraph
+        src="/data/dataset.json"
+        chart-path="distribution"
+        title="Verbreitende Akteure"
+        :height="350"
+      />
+    </section>
+    <section id="technical-complexity">
+      <h2>Technische Komplexität</h2>
+      Desinformation beinhaltet oft eigens erstellte Grafiken wie Memes oder
+      Bilder mit visuellem Begleittext. Auch unbearbeitete Bilder werden oft
+      geteilt, zumeist, indem in einem falschen Kontext über sie berichtet
+      wird.<br />
+      Desinformierende Videos tauchen in rund 20 % der Fälle auf. Sie sind in
+      der Regel unbearbeitet oder beinhalten lediglich einfache Schnitte und
+      Grafikeinblendungen.
+      <LazyGraph
+        src="/data/dataset.json"
+        chart-path="technical-complexity"
+        title="Technische Komplexität"
+        :height="350"
+      />
+    </section>
   </div>
 </template>
 
