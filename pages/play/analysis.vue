@@ -33,7 +33,7 @@
         bezieht sich Schweizer Desinformation auf Schweizer Themen.
       </p>
     </section>
-    <section id="topical-date-dependency">
+    <section id="topic-date-dependency">
       <h2>Themen in Abhängigkeit vom Datum</h2>
       <p>
         Hier ist dargestellt, über welche Themen zu welchem Zeitpunkt
@@ -47,9 +47,39 @@
         :height="350"
       />
       <p>
-        Desinformation bezieht sich meistens auf aktuelle Ereignisse. Die Themen
-        sind deshalb stark abhängig davon, was die Menschen aktuell gerade
-        beschäftigt.
+        Desinformation bezieht sich meistens auf aktuelle Ereignisse. Die
+        Themen, über welche berichtet wird,
+        <LinkPreview
+          url="https://doi.org/10.4324/9781003111474-4"
+          class="underline"
+          >sind deshalb stark abhängig davon, was die Menschen aktuell gerade
+          beschäftigt.</LinkPreview
+        >
+      </p>
+    </section>
+    <section id="emotionality">
+      <h2>Emotionalisierung</h2>
+      <p>
+        <LinkPreview url="https://hrcak.srce.hr/250787" class="underline"
+          >Beiträge werden oft emotionalisierend gestaltet,</LinkPreview
+        >
+        um so mehr Aufmerksamkeit zu erregen. Dabei spielen vor allem Wut/Ärger
+        und Angst eine Rolle. Aber auch Humor oder Satire wird oft eingesetzt
+        für desinformierende Beiträge.<br />
+        Die folgende Grafik zeigt dir die Verteilung der Emotionen pro
+        Medientyp:
+      </p>
+      <LazyGraph
+        src="/data/dataset.json"
+        chart-path="emotionality"
+        title="Emotionalisierung der Beiträge"
+        :height="350"
+      />
+      <p>
+        Oft fallen die vermittelte Emotionalität des Beitrags und des visuellen
+        Artefakts zusammen, jedoch nicht in jedem Fall. Oft werden humoristische
+        oder sarkastische Beiträge mit visuellen Artefakten kombiniert, welche
+        Wut vermitteln.
       </p>
     </section>
   </div>
