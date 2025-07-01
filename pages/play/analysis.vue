@@ -77,9 +77,9 @@
       />
       <p>
         Oft fallen die vermittelte Emotionalität des Beitrags und des visuellen
-        Artefakts zusammen, jedoch nicht in jedem Fall. Oft werden humoristische
-        oder sarkastische Beiträge mit visuellen Artefakten kombiniert, welche
-        Wut vermitteln.
+        Begleitmediums zusammen, jedoch nicht in jedem Fall. Oft werden
+        humoristische oder sarkastische Beiträge mit visuellen Artefakten
+        kombiniert, welche Wut vermitteln.
       </p>
     </section>
     <section id="distribution">
@@ -120,6 +120,25 @@
         src="/data/dataset.json"
         chart-path="technical-complexity"
         title="Technische Komplexität"
+        :height="350"
+      />
+    </section>
+    <section id="visual-coherence">
+      <h2>Inhaltlicher Zusammenhang</h2>
+      Meistens werden entweder wahre visuelle Inhalte durch desinformierenden
+      Begleittext aus dem Kontext gerissen und falsch dargestellt, oder sowohl
+      das visuelle Artefakt als auch der Begleittext verbreiten Desinformation.
+      Über falsche Darstellungen wird selten wahrheitsgemäss berichtet.
+      <p>
+        Weiter wurde untersucht, in welchem Zusammenhang der Beitragstext zur
+        jeweiligen Darstellung steht. Zu erwarten wäre hier, dass diese jeweils
+        thematisch zusammenpassen, also beispielsweise zu einem Gesundheitsthema
+        eine gesundheitsbezogene Abbildung beigefügt ist:
+      </p>
+      <LazyGraph
+        src="/data/dataset.json"
+        chart-path="visual-coherence"
+        title="Inhaltlicher Zusammenhang zwischen Beitragstext und visuellem Medium"
         :height="350"
       />
     </section>
