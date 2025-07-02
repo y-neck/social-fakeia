@@ -62,13 +62,21 @@ const quizBtnContainer = ref<HTMLElement | null>(null);
 /**
  * Store selection in sessionStorage
  * @var {string} key - key to store answers in sessionStorage
- * @var {string} value - store if the quiz was answered correctly
+ * @var {number} value - store boolean number if the quiz was answered correctly
  */
 function select(a: SelectQuizAnswer) {
   const key = `${quiz.value?.quizId ?? "quiz"}:${quiz.value?.title}`;
-  const value = JSON.stringify(a.correct);
+  const value = a.correct === 1 ? 5 : 0;
+
   // store kv pair
-  sessionStorage.setItem(key, value);
+  sessionStorage.setItem(
+    key,
+    JSON.stringify({
+      title: quiz.value?.title,
+      topic: quiz.value?.topic,
+      value: value,
+    }),
+  );
   // set state and show correct answer
   selectedAnswer.value = a;
   answered.value = true;

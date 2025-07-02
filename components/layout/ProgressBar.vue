@@ -18,29 +18,9 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter, useRoute } from "vue-router";
+import { usePlayTabs } from "~/composables/usePlayTabs";
 
-// collect routes
-const router = useRouter();
-const route = useRoute();
-
-const playRoutes = router
-  .getRoutes()
-  .filter((route) => route.path.startsWith("/play/") && route.meta?.title);
-
-// create TabsItem array
-const tabs = playRoutes.map((route) => ({
-  path: route.path,
-  label: (route.meta.title as string).replace(/_/g, "").toUpperCase(),
-}));
-
-// navigation
-function go(path: string) {
-  router.push(path);
-}
-
-// track current page
-const currentPath = computed(() => route.path);
+const { tabs, currentPath, go } = usePlayTabs();
 </script>
 
 <style scoped>
@@ -59,3 +39,5 @@ const currentPath = computed(() => route.path);
   color: var(--color-text);
 }
 </style>
+<!-- FIXME: Order of tabs -->
+<!-- FIXME: Responsiveness for mobile, change default height -->

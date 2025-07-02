@@ -114,12 +114,17 @@ async function confirmAnswers() {
 
   // store kv pair in sessionStorage
   const key = `${quiz.value?.quizId}:${quiz.value?.title}`;
-  const correctAnswersNumber = allAnswers.filter(
-    (id) => correctness[id],
-  ).length;
+  const correctCount = Object.values(correctness).filter(Boolean).length;
+  const total = quiz.value?.answers.length;
+  const scaled = (correctCount / total) * 5;
+
   sessionStorage.setItem(
     key,
-    [JSON.stringify(allMatch), correctAnswersNumber].join(","),
+    JSON.stringify({
+      title: quiz.value?.title,
+      topic: quiz.value?.topic,
+      value: scaled,
+    }),
   );
 
   // disable confirm button

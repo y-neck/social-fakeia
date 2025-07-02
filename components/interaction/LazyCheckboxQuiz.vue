@@ -89,12 +89,15 @@ function confirmAnswers() {
       "input[type=checkbox]",
     ),
   );
-  const userBits = answers.map((cb) => (cb.checked ? 1 : 0));
+  const userAnswers = answers.map((cb) => (cb.checked ? 1 : 0));
 
-  // check if checked answers match correct answers
-  const matchingAnswers =
-    userBits.length === correctAnswers.length &&
-    userBits.every((bit, a) => bit === correctAnswers[a]);
+  // count matches between user answers and correct answers and map to 0-5
+  const correctCount = userAnswers.reduce<number>(
+    (sum, bit, i) => sum + (bit === correctAnswers[i] ? 1 : 0),
+    0,
+  );
+  const total = correctAnswers.length;
+  const scaled = (correctCount / total) * 5;
   // mark correctly answered
   answers?.forEach((answer, id) => {
     const label = quizCheckboxContainer.value!.querySelector<HTMLLabelElement>(
@@ -107,12 +110,13 @@ function confirmAnswers() {
   });
   // store kv pair
   const key = `${quiz.value?.quizId ?? "quiz"}:${quiz.value?.title}`;
-  const correctAnswersNumber = userBits.filter(
-    (bit, a) => bit === correctAnswers[a],
-  ).length;
   sessionStorage.setItem(
     key,
-    [JSON.stringify(matchingAnswers), correctAnswersNumber].join(","),
+    JSON.stringify({
+      title: quiz.value?.title,
+      topic: quiz.value?.topic,
+      value: scaled,
+    }),
   );
 
   // disable confirm button
