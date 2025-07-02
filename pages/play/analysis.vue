@@ -76,9 +76,9 @@
         :height="350"
       />
       <p>
-        Oft fallen die vermittelte Emotionalität des Beitrags und des visuellen
-        Begleitmediums zusammen, jedoch nicht in jedem Fall. Oft werden
-        humoristische oder sarkastische Beiträge mit visuellen Artefakten
+        Dabei fallen vielmals die vermittelte Emotionalität des Beitrags und des
+        visuellen Begleitmediums zusammen, jedoch nicht in jedem Fall. Oft
+        werden humoristische oder sarkastische Beiträge mit visuellen Artefakten
         kombiniert, welche Wut vermitteln.
       </p>
     </section>
@@ -95,7 +95,7 @@
         Kollektivakteure, wie beispielsweise Organisationen oder Institutionen.
         <br />
         In den meisten Fällen handelt es sich bei den verbreitenden Accounts um
-        Einzelpersonen. Diese gehören unterschiedlichen gesellschaftlichen
+        Privatpersonen. Diese gehören unterschiedlichen gesellschaftlichen
         Gruppen an. Besonders Akteure aus Politik, Kultur (unter anderem auch
         Influencerinnen und Influencer) und Journalismus verbreiten
         Desinformation.
@@ -142,12 +142,34 @@
         :height="350"
       />
     </section>
+    <section id="quiz-section">
+      <LazyFillTheBlank interaction-path="results-quiz">
+        <p>
+          <DropDown :answerId="0" /> wird auf vielen Plattformen verbreitet, die
+          meisten desinformierenden Inhalte werden in der Schweiz jedoch via
+          <DropDown :answerId="1" />
+          geteilt. Die Themen beziehen sich meistens auf
+          <DropDown :answer-id="2" />.
+        </p>
+        <p>
+          Desinformierende Beiträge werden oft
+          <DropDown :answer-id="3" /> gestaltet. Dabei spielen vor allem Wut und
+          Angst eine grosse Rolle. Verbreitet wird die Desinformation
+          anschliessend durch verschiedene Personengruppen, hauptsächlich jedoch
+          durch <DropDown :answer-id="4" />. Visuelle Begleitmedien sind meist
+          eher technisch einfach gestaltet.
+        </p>
+        <p></p>
+      </LazyFillTheBlank>
+    </section>
   </div>
 </template>
 
 <script setup lang="ts">
 import LazyVideoPlayer from "~/components/content/LazyVideoPlayer.vue";
 import LazyGraph from "~/components/content/LazyGraph.vue";
+import LazyFillTheBlank from "~/components/interaction/LazyFillTheBlank.vue";
+import DropDown from "~/components/ui/dropdown-menu/DropDown.vue";
 
 useSeoMeta({
   title: "Untersuchung" /* Page title */,

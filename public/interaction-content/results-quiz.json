@@ -1,0 +1,92 @@
+{
+    "quizId": "results-quiz",
+    "title": "Fasse zusammen:",
+    "topic": "results",
+    "answers": [
+        {
+            "answerId": 0,
+            "answersArray": [
+                {
+                    "singleAnswer": "Desinformation",
+                    "correct": 1
+                },
+                {
+                    "singleAnswer": "Visuelle Desinformation",
+                    "correct": 0
+                }
+            ]
+        },
+        {
+            "answerId": 1,
+            "answersArray": [
+                {
+                    "singleAnswer": "Instagram",
+                    "correct": 0
+                },
+                {
+                    "singleAnswer": "Facebook",
+                    "correct": 1
+                },
+                {
+                    "singleAnswer": "TikTok",
+                    "correct": 0
+                }
+            ]
+        },
+        {
+            "answerId": 2,
+            "answersArray": [
+                {
+                    "singleAnswer": "Politik",
+                    "correct": 0
+                },
+                {
+                    "singleAnswer": "das aktuelle Datum",
+                    "correct": 0
+                },
+                {
+                    "singleAnswer": "aktuelle Ereignisse",
+                    "correct": 1
+                }
+            ]
+        },
+        {
+            "answerId": 3,
+            "answersArray": [
+                {
+                    "singleAnswer": "emotional",
+                    "correct": 1
+                },
+                {
+                    "singleAnswer": "impulsiv",
+                    "correct": 0
+                },
+                {
+                    "singleAnswer": "desinformierend",
+                    "correct": 0
+                }
+            ]
+        },
+        {
+            "answerId": 4,
+            "answersArray": [
+                {
+                    "singleAnswer": "Einzelpersonen",
+                    "correct": 1
+                },
+                {
+                    "singleAnswer": "Personengruppen",
+                    "correct": 0
+                },
+                {
+                    "singleAnswer": "Journalistinnen und Journalisten",
+                    "correct": 0
+                },
+                {
+                    "singleAnswer": "Kollektivakteure",
+                    "correct": 0
+                }
+            ]
+        }
+    ]
+}
