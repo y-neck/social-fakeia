@@ -3,9 +3,11 @@
     <DropdownMenuTrigger
       class="w-fit rounded-md bg-bg-transparent p-1"
       :class="{
-        correct: selected[answerId] === correctAnswer,
+        correct: confirmed && selected[answerId] === correctAnswer,
         incorrect:
-          selected[answerId] !== '' && selected[answerId] !== correctAnswer,
+          confirmed &&
+          selected[answerId] !== '' &&
+          selected[answerId] !== correctAnswer,
       }"
       :data-blank-id="answerId.toString()"
     >
@@ -46,6 +48,7 @@ const props = defineProps<{
 // inject quiz and shared selection map
 const quiz = inject("quiz") as Ref<FillTheBlankQuiz | null>;
 const selected = inject("selected") as Record<number, string>;
+const confirmed = inject("confirmed") as Ref<boolean>;
 
 // pull answersArray for slot
 const options = computed(() => {

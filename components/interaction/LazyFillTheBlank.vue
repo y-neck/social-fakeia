@@ -43,6 +43,7 @@ const correctness = reactive<Record<number, boolean>>({});
 // make available to child components
 provide("quiz", quiz);
 provide("selected", selected);
+provide("confirmed", quizBtnConfirmed);
 
 /**
  *  load quiz from JSON
@@ -113,7 +114,9 @@ async function confirmAnswers() {
 
   // store kv pair in sessionStorage
   const key = `${quiz.value?.quizId}:${quiz.value?.title}`;
-  const correctAnswersNumber = allAnswers.filter((id) => correctness[id]).length;
+  const correctAnswersNumber = allAnswers.filter(
+    (id) => correctness[id],
+  ).length;
   sessionStorage.setItem(
     key,
     [JSON.stringify(allMatch), correctAnswersNumber].join(","),
