@@ -107,7 +107,13 @@ function confirmAnswers() {
   });
   // store kv pair
   const key = `${quiz.value?.quizId ?? "quiz"}:${quiz.value?.title}`;
-  sessionStorage.setItem(key, JSON.stringify(matchingAnswers));
+  const correctAnswersNumber = userBits.filter(
+    (bit, a) => bit === correctAnswers[a],
+  ).length;
+  sessionStorage.setItem(
+    key,
+    [JSON.stringify(matchingAnswers), correctAnswersNumber].join(","),
+  );
 
   // disable confirm button
   quizBtnConfirmed.value = true;
