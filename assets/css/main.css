@@ -27,6 +27,7 @@
     --color-bg-transparent: rgba(238, 238, 238, 0.3);
     --color-background: rgb(2, 11, 7);
     --color-primary: rgb(73, 192, 172);
+    --color-primary-transparent: rgba(73, 192, 172, 0.2);
     --color-secondary: rgb(62, 145, 126);
     --color-secondary-transparent: rgba(62, 145, 126, 0.2);
     --color-accent: rgb(22, 208, 124);
