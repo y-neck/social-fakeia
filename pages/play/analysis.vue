@@ -162,6 +162,12 @@
         <p></p>
       </LazyFillTheBlank>
     </section>
+    <LazyButton
+      content="Weiter"
+      textStyling="text-fSize-p"
+      class="mx-auto"
+      @click="navigateTo('/conclusion')"
+    />
   </div>
 </template>
 
@@ -170,6 +176,7 @@ import LazyVideoPlayer from "~/components/content/LazyVideoPlayer.vue";
 import LazyGraph from "~/components/content/LazyGraph.vue";
 import LazyFillTheBlank from "~/components/interaction/LazyFillTheBlank.vue";
 import DropDown from "~/components/ui/dropdown-menu/DropDown.vue";
+import LazyButton from "~/components/common/LazyButton.vue";
 
 useSeoMeta({
   title: "Untersuchung" /* Page title */,
