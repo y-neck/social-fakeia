@@ -192,5 +192,3 @@ export function getChartConfig(rawData) {
 }
 
 export default { getChartType, getChartConfig };
-
-/* FIXME: legend vertical on mobile */

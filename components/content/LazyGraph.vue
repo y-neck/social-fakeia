@@ -146,6 +146,11 @@ async function loadConfig() {
       duration: 1000, // duration of animation in ms
       easing: "easeInOutCubic", // You can change the easing function if desired
     },
+    onResize: (chart: any, size: any) => {
+      const newPos = size.width < 512 ? "top" : "right";
+      chart.options.plugins.legend.position = newPos;
+      chart.update();
+    },
   };
 }
 
