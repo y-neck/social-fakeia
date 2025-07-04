@@ -9,6 +9,7 @@
           :options="chartOptions"
           :width="width"
           :height="height"
+          loading="lazy"
         />
       </div></div
   ></ClientOnly>
@@ -16,10 +17,12 @@
 
 <script setup lang="ts">
 import { Chart as ChartJS, Title, Tooltip, Legend } from "chart.js";
+// @see https://chartjs-plugin-deferred.netlify.app/guide/
+import ChartDeferred from "chartjs-plugin-deferred";
 import type { ChartTypeRegistry } from "chart.js";
 import * as VueChartJS from "vue-chartjs";
 // register Chart.js controllers & scales
-ChartJS.register(Title, Tooltip, Legend);
+ChartJS.register(Title, Tooltip, Legend, ChartDeferred);
 
 type ChartModule = {
   getChartType(): string;
@@ -98,6 +101,9 @@ async function loadConfig() {
           color: text,
         },
       },
+      deferred: {
+        delay: 200, // delay in ms before the chart is rendered
+      },
     },
     scales: {
       ...(options.scales || {}),
@@ -135,6 +141,10 @@ async function loadConfig() {
           borderColor: textTransparent,
         },
       },
+    },
+    animation: {
+      duration: 1000, // duration of animation in ms
+      easing: "easeInOutCubic", // You can change the easing function if desired
     },
   };
 }

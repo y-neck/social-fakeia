@@ -178,6 +178,13 @@ onMounted(() => {
         suggestedMax: 5,
       },
     },
+    deferred: {
+      delay: 200,
+    },
+    animation: {
+      duration: 1000, // duration of animation in ms
+      easing: "easeInOutCubic", // You can change the easing function if desired
+    },
   };
   // instantiate the chart
   if (conclusionChartRef.value) {
