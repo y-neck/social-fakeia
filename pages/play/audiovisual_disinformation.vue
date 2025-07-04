@@ -29,8 +29,7 @@
       Aussagen unterstellt werden können.
     </p>
     <section class="examples">
-      <!-- TODO: Animate-in -->
-      <div class="examples-inner">
+      <div class="examples-inner" loading="lazy">
         <NuxtImg
           src="img/Ex1.webp"
           alt="Beispiel 1"
@@ -112,6 +111,14 @@ definePageMeta({
   title: "Audiovisuelle Desinformation",
   layout: "game",
 });
+
+onMounted(() => {
+  // Animate-in images
+  const images = document.querySelectorAll(".example-img");
+  images.forEach((img) => {
+    img.classList.add("animate");
+  });
+});
 </script>
 
 <style scoped>
@@ -119,6 +126,7 @@ definePageMeta({
   position: relative;
   overflow: hidden;
   width: 100%;
+  height: 300px; /* fixed image height */
   margin: 2rem auto;
 }
 
@@ -137,27 +145,44 @@ definePageMeta({
     transform 0.2s ease,
     z-index 0s;
 }
+@keyframes slide-up {
+  from {
+    transform: translateY(200%) rotate(var(--img-rot));
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%) rotate(var(--img-rot));
+    opacity: 1;
+  }
+}
+.example-img.animate {
+  animation: slide-up 0.4s ease-in-out forwards; /* forwards: make sure animation plays only once */
+}
 
 /* Position & stack each image */
 .example-img:nth-of-type(1) {
   left: 0%;
   z-index: 1;
-  transform: translate(-10%, -50%) rotate(-2deg);
+  --img-rot: -2deg;
+  animation-delay: 0s;
 }
 .example-img:nth-of-type(2) {
   left: 25%;
   z-index: 2;
-  transform: translate(-10%, -50%) rotate(1.5deg);
+  --img-rot: 1.5deg;
+  animation-delay: 0.1s;
 }
 .example-img:nth-of-type(3) {
   left: 50%;
   z-index: 3;
-  transform: translate(-10%, -50%) rotate(-1.5deg);
+  --img-rot: -1.5deg;
+  animation-delay: 0.2s;
 }
 .example-img:nth-of-type(4) {
   left: 75%;
   z-index: 4;
-  transform: translate(-10%, -50%) rotate(2deg);
+  --img-rot: 2deg;
+  animation-delay: 0.3s;
 }
 
 @media (max-width: 480px) {
