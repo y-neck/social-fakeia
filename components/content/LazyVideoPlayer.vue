@@ -9,8 +9,8 @@
           v-for="(comment, i) in visibleComments"
           :key="i"
           class="video-information-content border-l-2 border-accent px-4"
-          >{{ comment.text }}</span
-        >
+          v-html="comment.text"
+        ></span>
       </div>
     </div>
   </ClientOnly>

@@ -94,7 +94,6 @@
         video-id="mUZj5iC0YoA"
         script-path="/timestamps/definition-comment.json"
     /></ClientOnly>
-    <!-- TODO: Video "Was ist Desinformation?" -->
     <section id="definition-quiz-section">
       <LazyRadioQuiz interaction-path="definition-quiz" />
     </section>

@@ -72,8 +72,7 @@
           Nun, nicht ganz. Desinformation kann gravierende Folgen haben; für
           dich, die Gesellschaft und unser generelles Miteinander.
         </p>
-        <LazyVideoPlayer video-id="" />
-        <!-- TODO: Video "Relevanz" -->
+        <LazyVideoPlayer video-id="s3gmYxCu5cE" />
         <p>
           Auf den nächsten Seiten erfährst du mehr über Desinformation auf
           Social-Media-Plattformen in der Schweiz.

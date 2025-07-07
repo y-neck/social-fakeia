@@ -109,8 +109,8 @@ import Callout from "~/components/layout/LazyCallout.vue";
 import Button from "~/components/common/LazyButton.vue";
 
 useSeoMeta({
-  title: "Social Fakeia – About",
-  ogTitle: "About" /* Page title without branding */,
+  title: "Social Fakeia",
+  ogTitle: "Social Fakeia" /* Page title without branding */,
   description: "",
   ogDescription: "",
 });

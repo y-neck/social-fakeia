@@ -34,8 +34,7 @@
         einprasseln, ist es ausserdem schwierig, die einzelnen Mitteilungen
         ausreichend kritisch zu betrachten.
       </p>
-      <LazyVideoPlayer video-id="" />
-      <!-- TODO: Video current-disinformation_spreading -->
+      <LazyVideoPlayer video-id="wDAT8OBi19Q" script-path="/timestamps/current-disinformation-spreading.json" />
       <p>
         Oftmals ist nicht klar,
         <LinkPreview
