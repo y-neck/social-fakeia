@@ -13,10 +13,16 @@
         ></span>
       </div>
     </div>
+    <Skeleton
+      v-if="!player"
+      class="aspect-video w-full"
+      :class="props.styling"
+    />
   </ClientOnly>
 </template>
 
 <script setup lang="ts">
+import Skeleton from "../ui/skeleton/Skeleton.vue";
 import { ref, onMounted, watch } from "vue";
 
 const props = defineProps<{
@@ -138,5 +144,3 @@ function onPlayerStateChange(event: any) {
   color: var(--color-accent) !important;
 }
 </style>
-
-<!-- TODO: Add skeleton -->
