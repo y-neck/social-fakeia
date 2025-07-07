@@ -3,7 +3,7 @@
     class="bottom-0 mt-4 flex h-fit w-full justify-between border-t border-text py-4 text-fsize-h3 text-text"
   >
     <div class="footer-div flex w-full flex-col items-center">
-      <NuxtLink to="/impressum" class="footer-link">Impressum</NuxtLink>
+      <NuxtLink to="/about#impressum" class="footer-link">Impressum</NuxtLink>
       <NuxtLink to="/datenschutz" class="footer-link">Datenschutz</NuxtLink>
     </div>
     <div class="footer-div w-full">
