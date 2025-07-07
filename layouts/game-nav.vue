@@ -19,9 +19,11 @@
             :key="item.id"
             :style="{ paddingLeft: item.level * 1 + 'rem' }"
           >
-            <a :href="'#' + item.id" :class="{ active: item.active }">{{
-              item.text
-            }}</a>
+            <a
+              :href="'#' + item.id"
+              :class="{ active: activeId === item.id }"
+              >{{ item.text }}</a
+            >
           </li>
         </ul>
       </nav>
@@ -63,7 +65,12 @@ function buildToc() {
   });
 }
 
-let observer: any;
+const visible = ref<string[]>([]);
+let observer: IntersectionObserver;
+
+const activeId = computed(() =>
+  visible.value.length ? visible.value[visible.value.length - 1] : null,
+);
 /**
  * set up an Intersection Observer to track activation of headings (h1, h2, h3).
  * @type {Object} IntersectionObserverOptions
@@ -75,12 +82,23 @@ function setupObserver() {
   const options = {
     root: null,
     rootMargin: "0px 0px -80% 0px",
-    threshold: [0],
+    threshold: [0, 0.1], // Trigger both, when entering and leaving the viewport
   };
   observer = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       const item = toc.find((x) => x.id === e.target.id);
-      if (item) item.active = e.isIntersecting;
+      if (e.isIntersecting) {
+        if (!visible.value.includes(item!.id)) {
+          visible.value.push(item!.id);
+        } else {
+          // if the item is already visible, we don't need to add it again
+          // required for scrolling in both directions
+          const idx = visible.value.indexOf(item!.id);
+          if (idx > -1) {
+            visible.value.splice(idx, 1);
+          }
+        }
+      }
     });
   }, options);
   toc.forEach((item) => {
