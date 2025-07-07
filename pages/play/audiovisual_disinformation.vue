@@ -142,7 +142,7 @@ onMounted(() => {
   transform-origin: center center;
   height: 300px;
   transition:
-    transform 0.2s ease,
+    transform 0.2s ease-in-out,
     z-index 0s;
 }
 @keyframes slide-up {

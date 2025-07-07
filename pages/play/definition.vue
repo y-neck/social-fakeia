@@ -125,6 +125,13 @@ definePageMeta({
   title: "Definition",
   layout: "game",
 });
+
+onMounted(() => {
+  // Animate-in list items
+  document.querySelectorAll("#definition-criteria li").forEach((item) => {
+    item.classList.add("animate");
+  });
+});
 </script>
 
 <style scoped>
@@ -139,8 +146,44 @@ li {
   gap: 1rem;
   padding-block: calc(var(--spacing) * 2) /* 0.5rem = 8px */;
   align-items: center;
+  /* initial state for animation */
+  opacity: 0;
+  transform: translateX(-10%);
 }
 
+/* staggered animation */
+li:nth-of-type(1) {
+  animation-delay: 0s;
+}
+li:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+li:nth-of-type(3) {
+  animation-delay: 0.2s;
+}
+li:nth-of-type(4) {
+  animation-delay: 0.3s;
+}
+li:nth-of-type(5) {
+  animation-delay: 0.4s;
+}
+li:nth-of-type(6) {
+  animation-delay: 0.5s;
+}
+
+@keyframes slide-in {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+li.animate {
+  animation-name: slide-in;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
 .list-span {
   width: calc(3 / 4 * 100%) /* 75% */;
   text-align: center;
