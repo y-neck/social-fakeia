@@ -14,7 +14,7 @@
       </div>
     </div>
     <Skeleton
-      v-if="!player"
+      v-if="!playerContainer"
       class="aspect-video w-full"
       :class="props.styling"
     />
