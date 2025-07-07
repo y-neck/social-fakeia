@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-md">
     <Alert
-      v-if="!alertShown && !alertClosed"
+      v-if="!alertShown"
       ref="start-alert"
       alert-description="Mit der Nutzung dieser Website stimmst du zu, dass die Seite für die volle Funktionalität Daten lokal auf deinem Gerät speichert. Mit dem Schliessen dieses Browser-Tabs werden diese wieder gelöscht."
       cancel-btn-text="Abbrechen"
@@ -10,7 +10,7 @@
       :confirm-btn-action="closeAlert"
     />
     <transition-group
-      v-if="alertClosed"
+      v-else
       tag="div"
       name="stagger"
       class="flex flex-col gap-xl"
@@ -107,19 +107,24 @@ const bubbleMessages = [
 
 /* Alert */
 const router = useRouter();
-const alertClosed = ref(false);
 const alertShown = ref(false);
 
 onMounted(() => {
   alertShown.value = sessionStorage.getItem("alertShown") === "true";
 });
 
+/**
+ * Closes the alert by setting the alertClosed state to true,
+ * stores the alertShown state in sessionStorage to persist the alert's closed state,
+ * and updates the alertShown state to true.
+ */
+
 function closeAlert() {
-  alertClosed.value = true;
   sessionStorage.setItem("alertShown", "true");
   alertShown.value = true;
 }
 function navigateHome() {
+  sessionStorage.clear();
   router.push("/");
 }
 
@@ -131,10 +136,18 @@ function proceed() {
 
 /* self assessment slider */
 const selfAssessmentSliderValue = ref(3);
-/* store self assessment value */
+/**
+ * store self assessment value
+ * @param {number} value - self assessment value
+ */
 function storeSelfAssessmentValue(value: number) {
   sessionStorage.setItem("selfAssessment", value.toString());
 }
+
+onMounted(() => {
+  // Check if the alert has been closed before
+  alertShown.value = sessionStorage.getItem("alertShown") === "true";
+});
 
 useSeoMeta({
   title: "Intro",
