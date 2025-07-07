@@ -1,5 +1,5 @@
 <template>
-  <div id="hero" class="flex max-h-screen flex-col items-center">
+  <div id="hero" class="flex h-screen max-h-screen flex-col items-center">
     <WorldMap
       :mapColor="'#377466'"
       :mapBgColor="'rgb(2, 11, 7)'"
@@ -7,17 +7,18 @@
     />
     <div
       id="hero-text"
-      class="absolute inset-0 flex flex-col items-center justify-center gap-md self-center p-24 text-center"
+      class="absolute inset-0 flex flex-col items-center justify-center gap-md self-center p-18 text-center md:p-24"
     >
-      <h1 class="text-6xl font-bold text-text">Wahr oder falsch?</h1>
-      <p class="text-fsize-h2 text-text">
-        Auf den sozialen Medien begegnet uns täglich eine Vielzahl von
-        Inhalten.<br />
+      <h1 class="text-4xl font-bold text-text md:text-6xl">
+        Wahr oder falsch?
+      </h1>
+      <p class="text-fsize-h3 text-text md:text-fsize-h2">
+        Auf den sozialen Medien begegnet uns täglich eine Vielzahl von Inhalten.
         Ist uns dabei bewusst, das längst nicht alles davon wahr ist?
       </p>
-      <p class="text-fsize-h2 text-text">
-        Wie funktionieren “Fake News” auf Social Media? Erkennst du sie?
-        <br />Und wie kannst du herausfinden, was richtig ist und was nicht?
+      <p class="text-fsize-h3 text-text md:text-fsize-h2">
+        Wie funktionieren “Fake News” auf Social Media? Erkennst du sie? Und wie
+        kannst du herausfinden, was richtig ist und was nicht?
       </p>
       <Button
         content="Starten"
@@ -76,7 +77,12 @@
             Sie ist dabei involviert in verschiedenen Aufklärungsprojekten zu
             Desinformation. Davor war sie 20 Jahre als Journalistin tätig.
             <br /><br />
-            <NuxtLink to="https://youtu.be/fHrg807W0eA" target="_blank" class="underline">Hier</NuxtLink>
+            <NuxtLink
+              to="https://youtu.be/fHrg807W0eA"
+              target="_blank"
+              class="underline"
+              >Hier</NuxtLink
+            >
             geht es zum ganzen Interview.
           </p>
         </div>
