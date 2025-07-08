@@ -34,7 +34,10 @@
         einprasseln, ist es ausserdem schwierig, die einzelnen Mitteilungen
         ausreichend kritisch zu betrachten.
       </p>
-      <LazyVideoPlayer video-id="wDAT8OBi19Q" script-path="/timestamps/current-disinformation-spreading.json" />
+      <LazyVideoPlayer
+        video-id="wDAT8OBi19Q"
+        script-path="/timestamps/current-disinformation-spreading.json"
+      />
       <p>
         Oftmals ist nicht klar,
         <LinkPreview
@@ -203,7 +206,7 @@
 
 <script setup lang="ts">
 import ProgressBar from "~/components/layout/ProgressBar.vue";
-import LinkPreview from "~/components/ui/link-preview/LinkPreview.vue";
+import LinkPreview from "~/components/ui/link-preview/LazyLinkPreview.vue";
 import LazyVideoPlayer from "~/components/content/LazyVideoPlayer.vue";
 import LazyAudioPlayer from "~/components/content/LazyAudioPlayer.vue";
 import LazyCheckboxQuiz from "~/components/interaction/LazyCheckboxQuiz.vue";

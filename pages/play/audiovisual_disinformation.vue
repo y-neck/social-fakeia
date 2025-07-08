@@ -12,18 +12,18 @@
     <p>
       Meistens handelt es sich bei visueller und audiovisueller Desinformation
       um
-      <LinkPreview
+      <LazyLinkPreview
         url="https://demtech.oii.ox.ac.uk/wp-content/uploads/sites/12/2021/01/CyberTroop-Report-2020-v.2.pdf"
         class="underline"
         >bearbeitete oder in einem falschen Kontext dargestellte Bilder oder
-        Videos.</LinkPreview
+        Videos.</LazyLinkPreview
       >
       Weitere Formen sind
-      <LinkPreview
+      <LazyLinkPreview
         url="https://doi.org/10.1177/14614448221141648"
         class="underline"
         >irreführende Grafiken, welche Tatsachen falsch darstellen, sowie in den
-        letzten Jahren vermehrt auch KI-generierte Deepfakes,</LinkPreview
+        letzten Jahren vermehrt auch KI-generierte Deepfakes,</LazyLinkPreview
       >
       bei welchen Menschen falsch dargestellt werden und ihnen somit falsche
       Aussagen unterstellt werden können.
@@ -62,22 +62,22 @@
     </section>
     <p>
       Menschen können sich
-      <LinkPreview
+      <LazyLinkPreview
         url="https://pnas.org/doi/full/10.1073/pnas.95.5.2703"
         class="underline"
         >oft besser an visuelle Informationen erinnnern als an
-        Text.</LinkPreview
+        Text.</LazyLinkPreview
       >
       Visuelle Inhalte werden weiter meistens eher als wahr angenommen und es
       wird ihnen eine höhere Glaubwürdigkeit zugeschrieben. <br />
       Ausserdem lösen Bilder und Videos meist eine stärkere emotionale Reaktion
       aus als Text. Die emotionale Reaktion hat einen Einfluss auf die
-      <LinkPreview
+      <LazyLinkPreview
         url="https://doi.org/10.1207/s15506878jobem4901_3"
         class="underline"
         >Aufmerksamkeit, Wahrnehmung und Erinnerung, und kann die
         Meinungsbildung der Zuschauerinnen und Zuschauer
-        beeinflussen.</LinkPreview
+        beeinflussen.</LazyLinkPreview
       >
       Dadurch stellt visuelle und audiovisuelle Desinformation nochmals eine
       besondere Gefahr dar.
@@ -100,6 +100,7 @@ import LazyCallout from "~/components/layout/LazyCallout.vue";
 import LazyVideoPlayer from "~/components/content/LazyVideoPlayer.vue";
 import LazyRadioQuiz from "~/components/interaction/LazyRadioQuiz.vue";
 import LazyButton from "~/components/common/LazyButton.vue";
+import LazyLinkPreview from "~/components/ui/link-preview/LazyLinkPreview.vue";
 
 useSeoMeta({
   title: "Audiovisuelle Desinformation" /* Page title */,

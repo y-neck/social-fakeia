@@ -9,9 +9,10 @@
       @mousemove="handleMouseMove"
       @mouseenter="showPreview"
       @mouseleave="hidePreview"
+      hydrateOnVisible
     >
       <!-- :class default: :class="cn('text-black, dark: text-white', props.linkClass) -->
-      <slot />
+      <slot class="text-pretty" />
     </NuxtLink>
 
     <!-- Preview -->
@@ -28,7 +29,7 @@
         <div
           class="block rounded-xl border-2 border-transparent bg-white p-1 shadow-lg dark:bg-gray-900"
         >
-          <img
+          <NuxtImg
             :src="previewSrc"
             :width="width"
             :height="height"

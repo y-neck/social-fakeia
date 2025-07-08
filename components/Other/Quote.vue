@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import LinkPreview from "../ui/link-preview/LinkPreview.vue";
+import LinkPreview from "../ui/link-preview/LazyLinkPreview.vue";
 
 const props = defineProps<{
   src: string;

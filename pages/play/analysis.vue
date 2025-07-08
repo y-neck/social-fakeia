@@ -48,19 +48,19 @@
       <p>
         Desinformation bezieht sich meistens auf aktuelle Ereignisse. Die
         Themen, über welche berichtet wird,
-        <LinkPreview
+        <LazyLinkPreview
           url="https://doi.org/10.4324/9781003111474-4"
           class="underline"
           >sind deshalb stark abhängig davon, was die Menschen aktuell gerade
-          beschäftigt.</LinkPreview
+          beschäftigt.</LazyLinkPreview
         >
       </p>
     </section>
     <section id="emotionality">
       <h2>Emotionalisierung</h2>
       <p>
-        <LinkPreview url="https://hrcak.srce.hr/250787" class="underline"
-          >Beiträge werden oft emotionalisierend gestaltet,</LinkPreview
+        <LazyLinkPreview url="https://hrcak.srce.hr/250787" class="underline"
+          >Beiträge werden oft emotionalisierend gestaltet,</LazyLinkPreview
         >
         um so mehr Aufmerksamkeit zu erregen. Dabei spielen vor allem Wut/Ärger
         und Angst eine Rolle. Aber auch Humor oder Satire wird oft eingesetzt
@@ -84,11 +84,12 @@
     <section id="distribution">
       <h2>Verbreitung</h2>
       <p>
-        <LinkPreview
+        <LazyLinkPreview
           url="https://doi.org/10.1108/JPBM-12-2018-2155"
           class="underline"
         >
-          Desinformation wird durch verschiedene Personengruppen</LinkPreview
+          Desinformation wird durch verschiedene
+          Personengruppen</LazyLinkPreview
         >
         verbreitet. Diese lassen sich einteilen in Einzelpersonen und
         Kollektivakteure, wie beispielsweise Organisationen oder Institutionen.
@@ -176,6 +177,7 @@ import LazyGraph from "~/components/content/LazyGraph.vue";
 import LazyFillTheBlank from "~/components/interaction/LazyFillTheBlank.vue";
 import DropDown from "~/components/ui/dropdown-menu/DropDown.vue";
 import LazyButton from "~/components/common/LazyButton.vue";
+import LazyLinkPreview from "~/components/ui/link-preview/LazyLinkPreview.vue";
 
 useSeoMeta({
   title: "Untersuchung" /* Page title */,

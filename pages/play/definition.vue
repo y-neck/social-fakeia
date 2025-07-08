@@ -109,7 +109,7 @@
 <script setup lang="ts">
 import ProgressBar from "~/components/layout/ProgressBar.vue";
 import LazyCallout from "~/components/layout/LazyCallout.vue";
-import LinkPreview from "~/components/ui/link-preview/LinkPreview.vue";
+import LinkPreview from "~/components/ui/link-preview/LazyLinkPreview.vue";
 import Quote from "~/components/Other/Quote.vue";
 import LazyVideoPlayer from "~/components/content/LazyVideoPlayer.vue";
 import LazyRadioQuiz from "~/components/interaction/LazyRadioQuiz.vue";
