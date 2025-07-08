@@ -30,7 +30,7 @@
     </div>
   </div>
   <div id="content-container" class="flex flex-col gap-md bg-background">
-    <div id="interview-section" class="px-16">
+    <div id="interview-section" class="flex flex-col gap-md px-16">
       <h2 class="text-fsize-h2 text-secondary">Experteninterviews</h2>
       <p class="text-text">
         Für dieses Projekt wurden zwei Experteninterviews zum Thema
