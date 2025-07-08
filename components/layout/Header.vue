@@ -1,5 +1,5 @@
 <template>
-  <header class="my-4 h-fit w-full bg-background text-fsize-h2 text-primary">
+  <header class="my-4 h-fit w-full bg-background text-fsize-h2 text-primary z-100">
     <nav class="flex gap-xl">
       <NuxtImg
         src="/img/favicon_text.webp"

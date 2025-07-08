@@ -27,7 +27,7 @@ export function getChartType() {
 
 export function getChartConfig(rawData) {
     const actorTypeLut = {
-        "1": "Privatperson/Individuum",
+        "1": "Privatperson",
         "2": "Kollektivakteur",
         "9": "Nicht erkennbar"
     }

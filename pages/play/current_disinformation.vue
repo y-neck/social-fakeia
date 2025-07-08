@@ -130,7 +130,7 @@
           url="https://journals.ala.org/index.php/ltr/article/view/6497"
           class="underline"
           >emotional und provokativ gestaltet,</LinkPreview
-        >, beispielsweise indem wütend oder enttäuscht über ein Thema berichtet
+        > beispielsweise indem wütend oder enttäuscht über ein Thema berichtet
         wird. Dadurch soll die Falschinformation
         <LinkPreview url="https://doi.org/10.22572/mi.26.2.2" class="underline"
           >möglichst viel Aufmerksamkeit erregen,</LinkPreview
@@ -252,12 +252,16 @@ li {
   ul {
     display: flex;
     flex-direction: column;
+    margin: 0;
   }
   li {
     display: flex;
     flex-direction: row;
     align-items: left;
+    text-align: left;
     gap: 1rem;
+    margin: 0;
+    padding: 0;
   }
   .list-span {
     width: 100%;

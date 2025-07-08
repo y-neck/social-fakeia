@@ -7,7 +7,7 @@
     />
     <div
       id="hero-text"
-      class="absolute inset-0 flex flex-col items-center justify-center gap-md self-center p-18 text-center md:p-24"
+      class="absolute inset-0 flex flex-col items-center justify-center gap-md self-center p-18 text-center max-sm:mt-[68px] md:p-24"
     >
       <h1 class="text-4xl font-bold text-text md:text-6xl">
         Wahr oder falsch?
@@ -29,7 +29,7 @@
       ></Button>
     </div>
   </div>
-  <div id="content-container" class="flex flex-col gap-md bg-background">
+  <div id="content-container" class="flex flex-col gap-md bg-background max-sm:mt-[68px]">
     <div id="interview-section" class="flex flex-col gap-md px-16">
       <h2 class="text-fsize-h2 text-secondary">Experteninterviews</h2>
       <p class="text-text">

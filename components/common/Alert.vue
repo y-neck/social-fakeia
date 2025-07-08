@@ -6,7 +6,7 @@
       class="alert-box flex h-fit w-1/2 flex-col gap-2 rounded-2xl border-2 bg-background p-4"
     >
       <div class="alert-description">{{ alertDescription }}</div>
-      <div class="alert-btn-section flex flex-1 gap-2">
+      <div class="alert-btn-section flex flex-col md:flex-row items-center flex-1 gap-2">
         <button class="cancel-btn" @click="cancelBtnAction">
           {{ cancelBtnText }}
         </button>

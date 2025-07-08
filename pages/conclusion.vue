@@ -91,8 +91,8 @@ onMounted(() => {
   // lookup table for topics assignments
   const chartLabelsLut = [
     "Allgemein",
-    "Aktuelle Desinformation",
-    "Audiovisuelle Desinformation",
+    ["Aktuelle", "Desinformation"],
+    ["Audiovisuelle", "Desinformation"],
     "Resultate",
   ];
 

@@ -17,7 +17,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* @custom-variant dark (&:is(.dark *)); */
 @layer utilities {
     .font-atkinson {
       font-family: "Atkinson Hyperlegible Next", sans-serif;
@@ -28,7 +27,6 @@
   }
 
 @theme {
-    
     --font-atkinson: 'Atkinson Hyperlegible Next', sans-serif;
     --font-atkinson-italic: 'Atkinson Hyperlegible Next Italic', sans-serif;
 
@@ -69,6 +67,34 @@
     --text-fsize-p: 1.1rem;
     --text-fsize-button: 1rem;
 }
+/* dark mode overrides */
+@media (prefers-color-scheme: dark){
+    :root{
+    --color-text: rgb(238, 238, 238);
+    --color-text-invert: rgb(17, 17, 17);
+    --color-text-transparent: rgba(238, 238, 238, 0.5);
+    --color-bg-transparent: rgba(238, 238, 238, 0.3);
+    --color-background: rgb(2, 11, 7);
+    --color-primary: rgb(73, 192, 172);
+    --color-primary-transparent: rgba(73, 192, 172, 0.2);
+    --color-secondary: rgb(62, 145, 126);
+    --color-secondary-transparent: rgba(62, 145, 126, 0.2);
+    --color-accent: rgb(22, 208, 124);
+    }
+}
+@custom-variant dark (&:where(.dark, .dark *));
+.dark{
+    --color-text: rgb(238, 238, 238);
+    --color-text-invert: rgb(17, 17, 17);
+    --color-text-transparent: rgba(238, 238, 238, 0.5);
+    --color-bg-transparent: rgba(238, 238, 238, 0.3);
+    --color-background: rgb(2, 11, 7);
+    --color-primary: rgb(73, 192, 172);
+    --color-primary-transparent: rgba(73, 192, 172, 0.2);
+    --color-secondary: rgb(62, 145, 126);
+    --color-secondary-transparent: rgba(62, 145, 126, 0.2);
+    --color-accent: rgb(22, 208, 124);
+}
 
 @layer utilities {
     .font-atkinson { font-family: var(--font-atkinson); }
@@ -80,8 +106,8 @@
         @apply bg-background;
     }
     
-    html {
-        @apply bg-background min-h-full;
+    html, body, #__nuxt, #__layout {
+        @apply bg-background min-h-screen;
     }
 
     a:hover {
