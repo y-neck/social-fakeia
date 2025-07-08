@@ -166,7 +166,7 @@
       content="Weiter"
       textStyling="text-fSize-p"
       class="mx-auto"
-      @click="navigateTo('/conclusion')"
+      @click="navigateTo('/play/tipps')"
     />
   </div>
 </template>
