@@ -138,6 +138,9 @@ li:nth-of-type(5) {
 li:nth-of-type(6) {
   animation-delay: 0.5s;
 }
+li:nth-of-type(7) {
+  animation-delay: 0.6s;
+}
 
 @keyframes slide-in {
   to {
@@ -171,6 +174,7 @@ li.animate {
     display: flex;
     flex-direction: row;
     align-items: left;
+    margin-inline: 1rem;
     gap: 1rem;
   }
   .list-span {

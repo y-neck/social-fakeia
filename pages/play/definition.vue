@@ -13,8 +13,8 @@
             url="https://doi.org/10.1080/0020174X.2018.1508363"
             class="underline"
             >Dieser wird jedoch in der Wissenschaft seltener
-            verwendet</LinkPreview
-          >, da er oft als politisches Schlagwort genutzt wird. Auf dieser
+            verwendet,</LinkPreview
+          > da er oft als politisches Schlagwort genutzt wird. Auf dieser
           Website wird deshalb der Begriff der aktuellen Desinformation
           gebraucht.
         </p>
