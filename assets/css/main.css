@@ -1,26 +1,41 @@
-@import "tailwindcss";
-@import "tw-animate-css";
 
-/* @custom-variant dark (&:is(.dark *)); */
-@tailwind utilities;
 
-/* BUG: Font assignment */
 @font-face {
     font-family: 'Atkinson Hyperlegible Next Italic';
-    src: url('public/fonts/AtkinsonHyperlegibleNext-Italic-VariableFont_wght.ttf') format('ttf');
+    src: url('/fonts/AtkinsonHyperlegibleNext-Italic-VariableFont_wght.ttf') format('truetype');
+    font-style: italic;
     font-weight: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Atkinson Hyperlegible Next';
-    src: url('public/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf') format('ttf');
+    src: url('/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf') format('truetype');
     font-style: normal;
     font-display: swap;
     font-weight: normal;
 }
 
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* @custom-variant dark (&:is(.dark *)); */
+@layer utilities {
+    .font-atkinson {
+      font-family: "Atkinson Hyperlegible Next", sans-serif;
+    }
+    .font-atkinson-italic {
+      font-family: "Atkinson Hyperlegible Next Italic", sans-serif;
+    }
+  }
+
+/* BUG: Font assignment */
+
 @theme {
+    
+    --font-atkinson: 'Atkinson Hyperlegible Next', sans-serif;
+    --font-atkinson-italic: 'Atkinson Hyperlegible Next Italic', sans-serif;
+
     --color-text: rgb(238, 238, 238);
     --color-text-invert: rgb(17, 17, 17);
     --color-text-transparent: rgba(238, 238, 238, 0.5);
@@ -52,15 +67,16 @@
     --p-lg: 1.5rem;
     --p-xl: 2rem;
 
-    --font-atkinson: 'Atkinson Hyperlegible Next', sans-serif;
-    --font-atkinson-italic: 'Atkinson Hyperlegible Next Italic', sans-serif;
-
     --text-fsize-h1: 2rem;
     --text-fsize-h2: 1.5rem;
     --text-fsize-h3: 1.25rem;
-    --text-fsize-p: 1rem;
-
+    --text-fsize-p: 1.1rem;
 }
+
+@layer utilities {
+    .font-atkinson { font-family: var(--font-atkinson); }
+    .font-atkinson-italic { font-family: var(--font-atkinson-italic); }
+  }
 
 @layer base {
     :root{
@@ -85,6 +101,10 @@
 
     h3 {
         @apply text-fsize-h3 text-accent;
+    }
+
+    p, li {
+        @apply text-fsize-p;
     }
 
     NuxtImg,
