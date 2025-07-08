@@ -47,7 +47,6 @@ let intervalId: number;
  */
 async function loadComments() {
   if (!props.scriptPath) {
-    // DEBUG:
     console.log("No scriptPath provided; skipping comments.");
 
     comments.value = [];
@@ -119,9 +118,7 @@ onBeforeUnmount(() => {
 });
 
 // call function when video player is ready
-function onPlayerReady(event: any) {
-  event.target.playVideo();
-}
+function onPlayerReady(event: any) {}
 
 // call function when player's state changes
 function onPlayerStateChange(event: any) {
