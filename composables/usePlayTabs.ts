@@ -12,6 +12,7 @@ export function usePlayTabs() {
     "current_disinformation",
     "audiovisual_disinformation",
     "analysis",
+    "tipps",
   ];
 
   // filter only those /play/ routes with a meta.title
