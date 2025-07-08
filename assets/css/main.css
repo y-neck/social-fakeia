@@ -1,5 +1,3 @@
-
-
 @font-face {
     font-family: 'Atkinson Hyperlegible Next Italic';
     src: url('/fonts/AtkinsonHyperlegibleNext-Italic-VariableFont_wght.ttf') format('truetype');
@@ -28,8 +26,6 @@
       font-family: "Atkinson Hyperlegible Next Italic", sans-serif;
     }
   }
-
-/* BUG: Font assignment */
 
 @theme {
     
@@ -71,6 +67,7 @@
     --text-fsize-h2: 1.5rem;
     --text-fsize-h3: 1.25rem;
     --text-fsize-p: 1.1rem;
+    --text-fsize-button: 1rem;
 }
 
 @layer utilities {
