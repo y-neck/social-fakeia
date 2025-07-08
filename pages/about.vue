@@ -138,44 +138,44 @@
         <h2 class="text-fsize-h3">Verwendete Technologien</h2>
         <ul id="tech-stack">
           <li>
-            <NuxtLink to="https://nuxt.com" target="_blank">• Nuxt</NuxtLink>
+            <LazyLinkPreview url="https://nuxt.com" target="_blank">• Nuxt</LazyLinkPreview>
           </li>
           <li>
-            <NuxtLink to="https://tailwindcss.com" target="_blank"
-              >• Tailwind CSS</NuxtLink
+            <LazyLinkPreview url="https://tailwindcss.com" target="_blank"
+              >• Tailwind CSS</LazyLinkPreview
             >
           </li>
           <li>
-            <NuxtLink to="https://www.chartjs.org/docs/latest/" target="_blank"
-              >• Chart.js</NuxtLink
+            <LazyLinkPreview url="https://www.chartjs.org/docs/latest/" target="_blank"
+              >• Chart.js</LazyLinkPreview
             >
           </li>
           <li>
-            <NuxtLink to="https://fontawesome.com/" target="_blank"
-              >• Font Awesome</NuxtLink
+            <LazyLinkPreview url="https://fontawesome.com/" target="_blank"
+              >• Font Awesome</LazyLinkPreview
             >
           </li>
           <li>
-            <NuxtLink to="https://vercel.com" target="_blank"
-              >• Vercel (Hosting)</NuxtLink
+            <LazyLinkPreview url="https://vercel.com" target="_blank"
+              >• Vercel (Hosting)</LazyLinkPreview
             >
           </li>
         </ul>
         <h3 class="text-fsize-p">Components</h3>
         <ul id="components">
           <li>
-            <NuxtLink to="https://ui.aceternity.com/" target="_blank"
-              >• Aceternity UI</NuxtLink
+            <LazyLinkPreview url="https://ui.aceternity.com/" target="_blank"
+              >• Aceternity UI</LazyLinkPreview
             >
           </li>
           <li>
-            <NuxtLink to="https://ui.nuxt.com" target="_blank"
-              >• NuxtUI Components</NuxtLink
+            <LazyLinkPreview url="https://ui.nuxt.com" target="_blank"
+              >• NuxtUI Components</LazyLinkPreview
             >
           </li>
           <li>
-            <NuxtLink to="https://inspira-ui.com/" target="_blank"
-              >• Inspira UI</NuxtLink
+            <LazyLinkPreview url="https://inspira-ui.com/" target="_blank"
+              >• Inspira UI</LazyLinkPreview
             >
           </li>
         </ul>
@@ -193,6 +193,7 @@
 import Button from "~/components/common/LazyButton.vue";
 import LazyCallout from "~/components/layout/LazyCallout.vue";
 import LazyVideoPlayer from "~/components/content/LazyVideoPlayer.vue";
+import LazyLinkPreview from "~/components/ui/link-preview/LazyLinkPreview.vue";
 
 /* Reference btn */
 const referenceBtnClicked = ref(false);
