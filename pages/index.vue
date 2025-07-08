@@ -1,5 +1,5 @@
 <template>
-  <div id="hero" class="flex h-screen max-h-screen flex-col items-center">
+  <div id="hero" class="flex h-[80vh] max-h-[80vh] flex-col items-center">
     <WorldMap
       :mapColor="'#377466'"
       :mapBgColor="'rgb(2, 11, 7)'"
@@ -12,11 +12,11 @@
       <h1 class="text-4xl font-bold text-text md:text-6xl">
         Wahr oder falsch?
       </h1>
-      <p class="text-fsize-h3 text-text md:text-fsize-h2">
+      <p class="text-fsize-h3 text-balance text-text md:text-fsize-h2">
         Auf den sozialen Medien begegnet uns täglich eine Vielzahl von Inhalten.
         Ist uns dabei bewusst, das längst nicht alles davon wahr ist?
       </p>
-      <p class="text-fsize-h3 text-text md:text-fsize-h2">
+      <p class="text-fsize-h3 text-balance text-text md:text-fsize-h2">
         Wie funktionieren “Fake News” auf Social Media? Erkennst du sie? Und wie
         kannst du herausfinden, was richtig ist und was nicht?
       </p>
@@ -30,7 +30,7 @@
     </div>
   </div>
   <div id="content-container" class="flex flex-col gap-md bg-background">
-    <div id="interview-section" class="mx-16 flex flex-col gap-md text-left">
+    <div id="interview-section" class="px-16">
       <h2 class="text-fsize-h2 text-secondary">Experteninterviews</h2>
       <p class="text-text">
         Für dieses Projekt wurden zwei Experteninterviews zum Thema
@@ -61,8 +61,6 @@
           </p>
         </div>
       </div>
-    </div>
-    <div id="interview-section" class="m-16 flex flex-col">
       <div class="interview-container">
         <NuxtImg
           src="/img/henriette_engbersen.webp"
@@ -90,7 +88,7 @@
     </div>
     <div id="about-section" class="m-16 flex flex-col">
       <Callout icon="graduation-cap">
-        <p>
+        <p class="text-balance md:text-pretty">
           Diese Website ist als multimediales Projekt im Rahmen meiner
           Bachelorarbeit zum Thema "(Audio-) visuelle Desinformation auf
           Social-Media-Plattformen in der Schweiz" im Studiengang Multimedia
@@ -127,6 +125,12 @@ definePageMeta({
 </script>
 
 <style scoped>
+.interview-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+  text-align: left;
+}
 .interview-container {
   display: flex;
   gap: var(--gap-md);
@@ -139,7 +143,7 @@ definePageMeta({
 .interview-photo {
   aspect-ratio: 4/3;
   height: 8rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 .interviewee-name {
   color: var(--color-accent);
@@ -147,5 +151,12 @@ definePageMeta({
 }
 .interviewee-desc {
   color: var(--color-text);
+  text-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .interview-container {
+    flex-direction: column;
+  }
 }
 </style>

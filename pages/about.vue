@@ -43,12 +43,17 @@
     </section>
     <section id="download-section" class="items-center pb-4">
       <h2>Download</h2>
-      <p class="px-16 text-center text-accent">
+      <p class="px-4 text-center text-pretty text-accent">
         Bald kannst du hier die Thesis herunterladen! Wenn du jetzt schon
-        Interesse daran hast, schreibe mir gerne eine Email, um sie dann sofort
-        zu erhalten, sobald sie fertig ist.
+        Interesse daran hast, schreibe mir gerne eine
+        <a
+          href="mailto:yannick@neckxproductions.ch?subject=Voranfrage Bachelorarbeit"
+          class="underline"
+          >Mail</a
+        >
+        , um sie dann sofort zu erhalten, sobald sie fertig ist.
       </p>
-      <!--     <p id="download-text">
+      <!-- <p id="download-text">
         Hier kannst du die Thesis als PDF oder Bib-Eintrag herunterladen:
       </p>
        <div id="download-btns" class="flex w-full justify-center gap-md">
@@ -69,36 +74,38 @@
         <!-- TODO: Nice to have: Copy fn -->
         <p class="text-text-transparent">BIB</p>
         <div id="reference" class="flex flex-col">
-          <span
-            ><p class="text-accent">
-              @thesis {spriessler_audiovisual_2025,
-            </p></span
-          >
-          <span class="span-indent">location = {Chur},</span>
-          <span class="span-indent"
-            >title = {(Audio-)visuelle Desinformation auf
-            Social-Media-Plattformen in der Schweiz},</span
-          >
-          <span class="span-indent"
-            >institution = {Fachhochschule Graubünden},</span
-          >
-          <span class="span-indent">type = {Bachelor's Thesis},</span>
-          <span class="span-indent">author = {Spriessler, Yannick},</span>
-          <span class="span-indent">year = {2025},</span>
-          <span class="span-indent">langid = {german},</span>
-          <span>}</span>
+          <samp class="flex flex-col">
+            <span
+              ><p class="text-accent">
+                @thesis {spriessler_audiovisual_2025,
+              </p></span
+            >
+            <span class="span-indent">location = {Chur},</span>
+            <span class="span-indent"
+              >title = {(Audio-)visuelle Desinformation auf
+              Social-Media-Plattformen in der Schweiz},</span
+            >
+            <span class="span-indent"
+              >institution = {Fachhochschule Graubünden},</span
+            >
+            <span class="span-indent">type = {Bachelor's Thesis},</span>
+            <span class="span-indent">author = {Spriessler, Yannick},</span>
+            <span class="span-indent">year = {2025},</span>
+            <span class="span-indent">langid = {german},</span>
+            <span>}</span>
+          </samp>
         </div>
       </div>
     </section>
     <section id="about-me-section">
       <LazyCallout title="Über mich" icon="user">
-        <div class="flex gap-md">
+        <div class="flex flex-col md:flex-row gap-md">
           <NuxtImg
             src="/img/yannick_spriessler.webp"
             alt="Portrait von Yannick Spriessler"
             loading="lazy"
             format="webp"
-            class="h-30 rounded-lg"
+            class="h-30 rounded-lg object-contain"
           />
           <p>
             Mein Name ist Yannick Spriessler. Ich habe von 2022 bis 2025 an der
@@ -139,8 +146,8 @@
             >
           </li>
           <li>
-            <NuxtLink to="https://d3js.org/api" target="_blank"
-              >• D3.js</NuxtLink
+            <NuxtLink to="https://www.chartjs.org/docs/latest/" target="_blank"
+              >• Chart.js</NuxtLink
             >
           </li>
           <li>
@@ -171,6 +178,11 @@
               >• Inspira UI</NuxtLink
             >
           </li>
+        </ul>
+        <h3 class="text-fsize-p">Hilfsmittel</h3>
+        <ul id="tools">
+          <li>• ChatGPT</li>
+          <li>• Windsurf AI (ehemals Codeium)</li>
         </ul>
       </LazyCallout>
     </section>

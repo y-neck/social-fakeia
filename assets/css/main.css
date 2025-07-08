@@ -92,19 +92,19 @@
     }
 
     h1 {
-        @apply text-fsize-h1 text-primary;
+        @apply text-fsize-h1 text-primary text-balance;
     }
 
     h2 {
-        @apply text-fsize-h2 text-secondary;
+        @apply text-fsize-h2 text-secondary text-balance;
     }
 
     h3 {
-        @apply text-fsize-h3 text-accent;
+        @apply text-fsize-h3 text-accent text-balance;
     }
 
     p, li {
-        @apply text-fsize-p;
+        @apply text-fsize-p text-pretty;
     }
 
     NuxtImg,
