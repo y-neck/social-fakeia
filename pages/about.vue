@@ -37,9 +37,10 @@
         gerne melden.
       </p>
       <LazyVideoPlayer
-        video-id="g2P5muIXgNU"
+        video-id="7czfidfp0q4"
         styling="w-3/4 self-center"
-      /><!-- TODO: Replace video id -->
+        title="Video: Filmische Zusammenfassung | Visuelle und audiovisuelle Desinformation auf Social Media"
+      />
     </section>
     <section id="download-section" class="items-center pb-4">
       <h2>Download</h2>
@@ -99,7 +100,7 @@
     </section>
     <section id="about-me-section">
       <LazyCallout title="Über mich" icon="user">
-        <div class="flex flex-col md:flex-row gap-md">
+        <div class="flex flex-col gap-md md:flex-row">
           <NuxtImg
             src="/img/yannick_spriessler.webp"
             alt="Portrait von Yannick Spriessler"
@@ -111,7 +112,7 @@
             Mein Name ist Yannick Spriessler. Ich habe von 2022 bis 2025 an der
             Fachhochschule Graubünden Multimedia Production studiert. In meiner
             Bachelorarbeit habe ich mich damit auseinandergesetzt, wie visuelle
-            und audiovisulle Desinformation auf Social-Media-Plattformen in der
+            und audiovisuelle Desinformation auf Social-Media-Plattformen in der
             Schweiz funktioniert.
             <br /><br />
             Schon länger interessiere ich mich für Politik und gesellschaftliche
@@ -138,7 +139,9 @@
         <h2 class="text-fsize-h3">Verwendete Technologien</h2>
         <ul id="tech-stack">
           <li>
-            <LazyLinkPreview url="https://nuxt.com" target="_blank">• Nuxt</LazyLinkPreview>
+            <LazyLinkPreview url="https://nuxt.com" target="_blank"
+              >• Nuxt</LazyLinkPreview
+            >
           </li>
           <li>
             <LazyLinkPreview url="https://tailwindcss.com" target="_blank"
@@ -146,7 +149,9 @@
             >
           </li>
           <li>
-            <LazyLinkPreview url="https://www.chartjs.org/docs/latest/" target="_blank"
+            <LazyLinkPreview
+              url="https://www.chartjs.org/docs/latest/"
+              target="_blank"
               >• Chart.js</LazyLinkPreview
             >
           </li>

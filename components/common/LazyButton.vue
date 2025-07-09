@@ -4,6 +4,8 @@
   <div>
     <button
       class="group relative inline-block cursor-pointer rounded-full bg-background p-px text-xs leading-6 font-semibold text-text no-underline shadow-2xl shadow-zinc-900"
+      role="button"
+      :aria-label="`${props.content}`"
     >
       <span class="absolute inset-0 overflow-hidden rounded-full">
         <span

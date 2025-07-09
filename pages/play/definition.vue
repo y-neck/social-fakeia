@@ -93,6 +93,7 @@
       ><LazyVideoPlayer
         video-id="mUZj5iC0YoA"
         script-path="/timestamps/definition-comment.json"
+        title="Video: Definition von aktueller Desinformation"
     /></ClientOnly>
     <section id="definition-quiz-section">
       <LazyRadioQuiz interaction-path="definition-quiz" />

@@ -11,7 +11,10 @@
         wie du mit desinformierenden Inhalten umgehen und ihre Verbreitung
         begrenzen kannst:
       </p>
-      <LazyVideoPlayer video-id="rtS9B-Y3mLk" />
+      <LazyVideoPlayer
+        video-id="rtS9B-Y3mLk"
+        title="Video: Tipps gegen Desinformation"
+      />
       <ul id="definition-criteria">
         <li>
           <font-awesome-icon icon="share-nodes" class="fa-icon" />

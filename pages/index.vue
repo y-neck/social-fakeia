@@ -39,7 +39,7 @@
       <div class="interview-container">
         <NuxtImg
           src="/img/marko_kovic.webp"
-          alt="Interview-Foto"
+          alt="Interview-Foto Marko Ković"
           class="interview-photo"
           format="webp"
         />
@@ -64,7 +64,7 @@
       <div class="interview-container">
         <NuxtImg
           src="/img/henriette_engbersen.webp"
-          alt="Interview-Foto"
+          alt="Interview-Foto Henriette Engbersen"
           class="interview-photo"
           format="webp"
         />

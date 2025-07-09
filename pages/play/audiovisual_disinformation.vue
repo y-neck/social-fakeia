@@ -82,7 +82,7 @@
       Dadurch stellt visuelle und audiovisuelle Desinformation nochmals eine
       besondere Gefahr dar.
     </p>
-    <LazyVideoPlayer video-id="s9iYilODevs" />
+    <LazyVideoPlayer video-id="s9iYilODevs" title="Video: Audiovisuelle Desinformation" />
     <LazyRadioQuiz interaction-path="audiovisual-disinformation-quiz" script-path="/timestamps/audiovisual-disinformation.json" />
     <LazyButton
       content="Weiter"

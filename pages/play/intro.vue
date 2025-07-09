@@ -8,7 +8,9 @@
       confirm-btn-text="Einverstanden"
       :cancel-btn-action="navigateHome"
       :confirm-btn-action="closeAlert"
-    />
+    >
+      <h1 class="sr-only">Intro</h1>
+    </Alert>
     <transition-group
       v-else
       tag="div"
@@ -56,6 +58,11 @@
           max="5"
           v-model="selfAssessmentSliderValue"
           @change="storeSelfAssessmentValue(selfAssessmentSliderValue)"
+          role="slider"
+          :aria-valuenow="selfAssessmentSliderValue"
+          aria-valuemin="1"
+          aria-valuemax="5"
+          aria-label="Selbsteinschätzung bezüglich Desinformationskenntnissen"
         />
         <span
           id="self-assessment-value"
@@ -72,7 +79,10 @@
           Nun, nicht ganz. Desinformation kann gravierende Folgen haben; für
           dich, die Gesellschaft und unser generelles Miteinander.
         </p>
-        <LazyVideoPlayer video-id="s3gmYxCu5cE" />
+        <LazyVideoPlayer
+          video-id="s3gmYxCu5cE"
+          title="Video: Warum sollte ich mich mit Desinformation befassen?"
+        />
         <p>
           Auf den nächsten Seiten erfährst du mehr über Desinformation auf
           Social-Media-Plattformen in der Schweiz.

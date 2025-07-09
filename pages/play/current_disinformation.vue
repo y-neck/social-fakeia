@@ -37,6 +37,7 @@
       <LazyVideoPlayer
         video-id="wDAT8OBi19Q"
         script-path="/timestamps/current-disinformation-spreading.json"
+        title="Video: Verbreitung von aktueller Desinformation"
       />
       <p>
         Oftmals ist nicht klar,

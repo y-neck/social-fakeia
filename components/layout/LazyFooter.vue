@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="bottom-0 mt-4 flex h-fit w-full justify-between border-t border-text py-4 text-fsize-h3 text-text bg-background"
+    class="bottom-0 mt-4 flex h-fit w-full justify-between border-t border-text bg-background py-4 text-fsize-h3 text-text"
   >
     <div class="footer-div flex w-full flex-col items-center">
       <NuxtLink to="/about#impressum" class="footer-link">Impressum</NuxtLink>
@@ -17,6 +17,7 @@
           width="24"
           height="24"
           xmlns="http://www.w3.org/2000/svg"
+          role="link"
         >
           <path
             fill-rule="evenodd"
@@ -25,8 +26,8 @@
             fill="#fff"
           />
         </svg>
+        <span class="sr-only">GitHub</span>
       </NuxtLink>
-      <span class="sr-only">GitHub</span>
     </div>
     <div class="footer-div flex w-full flex-col items-center">
       <NuxtLink
