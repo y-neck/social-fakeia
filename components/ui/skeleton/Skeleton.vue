@@ -1,3 +1,5 @@
+<!-- Shadcn-vue.com. (n.d.). Skeleton. https://www.shadcn-vue.com/docs/components/skeleton-->
+
 <script setup lang="ts">
 import type { HTMLAttributes } from "vue";
 import { cn } from "@/lib/utils";
