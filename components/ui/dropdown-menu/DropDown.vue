@@ -40,16 +40,13 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import type { FillTheBlankQuiz } from "~/model/interaction-content";
-
 const props = defineProps<{
   answerId: number;
 }>();
-
 // inject quiz and shared selection map
 const quiz = inject("quiz") as Ref<FillTheBlankQuiz | null>;
 const selected = inject("selected") as Record<number, string>;
 const confirmed = inject("confirmed") as Ref<boolean>;
-
 // pull answersArray for slot
 const options = computed(() => {
   const group = quiz.value?.answers.find(
@@ -57,13 +54,11 @@ const options = computed(() => {
   );
   return group?.answersArray ?? [];
 });
-
 // figure out which singleAnswer is correct
 const correctAnswer = computed(() => {
   const grp = quiz.value?.answers.find((g) => g.answerId === props.answerId);
   return grp?.answersArray.find((opt) => opt.correct === 1)?.singleAnswer!;
 });
-
 // answerText v-model proxy to bind directly into shared map
 const answerText = ref(selected[props.answerId]);
 watch(answerText, (value) => {

@@ -1,9 +1,16 @@
 <template>
   <div id="hero" class="flex h-[80vh] max-h-[80vh] flex-col items-center">
-    <WorldMap
-      :mapColor="'#377466'"
-      :mapBgColor="'rgb(2, 11, 7)'"
-      :lineColor="'#0EA5E9'"
+    <NuxtImg
+      src="/img/worldMap.webp"
+      preload
+      loading="eager"
+      class="object-cover"
+      fetchpriority="high"
+      alt="world map"
+      height="500"
+      width="1000"
+      format="webp"
+      quality="80"
     />
     <div
       id="hero-text"
@@ -29,7 +36,11 @@
       ></Button>
     </div>
   </div>
-  <div id="content-container" class="flex flex-col gap-md bg-background max-sm:mt-[68px]">
+  <div
+    id="content-container"
+    class="flex flex-col gap-md bg-background max-sm:mt-[68px]"
+    loading="lazy"
+  >
     <div id="interview-section" class="flex flex-col gap-md px-16">
       <h2 class="text-fsize-h2 text-secondary">Experteninterviews</h2>
       <p class="text-text">
@@ -42,6 +53,7 @@
           alt="Interview-Foto Marko Ković"
           class="interview-photo"
           format="webp"
+          height="128px"
         />
         <div class="interview-card">
           <h3 class="interviewee-name">Marko Ković</h3>
@@ -67,6 +79,7 @@
           alt="Interview-Foto Henriette Engbersen"
           class="interview-photo"
           format="webp"
+          height="128px"
         />
         <div class="interview-card">
           <h3 class="interviewee-name">Henriette Engbersen</h3>
@@ -87,7 +100,7 @@
       </div>
     </div>
     <div id="about-section" class="m-16 flex flex-col">
-      <Callout icon="graduation-cap">
+      <Callout icon="graduation-cap" loading="lazy">
         <p class="text-balance md:text-pretty">
           Diese Website ist als multimediales Projekt im Rahmen meiner
           Bachelorarbeit zum Thema "(Audio-) visuelle Desinformation auf
@@ -108,17 +121,13 @@
 </template>
 
 <script setup lang="ts">
-import WorldMap from "~/components/ui/world-map/LazyWorldMap.vue";
 import Callout from "~/components/layout/LazyCallout.vue";
 import Button from "~/components/common/LazyButton.vue";
 
 useSeoMeta({
   title: "Social Fakeia",
   ogTitle: "Social Fakeia" /* Page title without branding */,
-  description: "",
-  ogDescription: "",
 });
-
 definePageMeta({
   layout: "no-padding",
 });
@@ -153,7 +162,6 @@ definePageMeta({
   color: var(--color-text);
   text-wrap: wrap;
 }
-
 @media screen and (max-width: 768px) {
   .interview-container {
     flex-direction: column;

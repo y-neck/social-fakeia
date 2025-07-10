@@ -11,6 +11,7 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
+  ssr: false,
   app: {
     head: {
       charset: "utf-8",
@@ -18,6 +19,34 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "de" /* Set lang attribute on <html> tag */,
       },
+      meta: [
+        {
+          name: "description",
+          content:
+            "Diese Website ist als multimediales Projekt im Rahmen meiner Bachelorarbeit zum Thema (Audio-) visuelle Desinformation auf Social-Media-Plattformen in der Schweiz im Studiengang Multimedia Production an der Fachhochschule Graubünden entstanden. Sie soll dir helfen, visuelle und audiovisuelle Desinformation besser erkennen und einordnen zu können.",
+        },
+        {
+          name: "og:description",
+          content:
+            "Diese Website ist als multimediales Projekt im Rahmen meiner Bachelorarbeit zum Thema (Audio-) visuelle Desinformation auf Social-Media-Plattformen in der Schweiz im Studiengang Multimedia Production an der Fachhochschule Graubünden entstanden. Sie soll dir helfen, visuelle und audiovisuelle Desinformation besser erkennen und einordnen zu können.",
+        },
+        {
+          name: "og:image",
+          content: "/img/favicon_text.webp",
+        },
+        {
+          name: "og:image:alt",
+          content: "Social Fakeia",
+        },
+        { name: "creator", content: "Yannick Spriessler" },
+      ],
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.ico",
+        },
+      ],
     },
   },
   css: [
@@ -31,7 +60,14 @@ export default defineNuxtConfig({
     "~/plugins/preamble.client.ts",
     "~/plugins/youtube-player.client.ts",
   ],
-  modules: ["shadcn-nuxt", "@nuxt/image", "@nuxt/ui"],
+  modules: [
+    "shadcn-nuxt",
+    "@nuxt/image",
+    "@nuxt/ui",
+    "@nuxtjs/sitemap",
+    "@nuxtjs/partytown",
+  ],
+  /* Shadcn-vue: shadcn-vue.com/docs/components/ */
   shadcn: {
     /**
      * Prefix for all the imported component
@@ -43,7 +79,13 @@ export default defineNuxtConfig({
      */
     componentDir: "./components/ui",
   },
+  /* Nuxt UI: https://ui.nuxt.com/ */
   ui: {
     colorMode: false,
+  },
+  /* Nuxt Sitemap: https://nuxtseo.com/docs/sitemap/getting-started/introduction */
+  site: {
+    url: "",
+    name: "Social Fakeia",
   },
 });

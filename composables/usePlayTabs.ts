@@ -19,7 +19,6 @@ export function usePlayTabs() {
   const playRoutes = router
     .getRoutes()
     .filter((r) => r.path.startsWith("/play/") && r.meta?.title);
-
   // turn them into { path, label } objects
   const tabs = computed(() => {
     return (
@@ -37,14 +36,11 @@ export function usePlayTabs() {
         })
     );
   });
-
   // current vue-route path
   const currentPath = computed(() => route.path);
-
   // helper fn to navigate
   function go(path: string) {
     return router.push(path);
   }
-
   return { tabs, currentPath, go };
 }

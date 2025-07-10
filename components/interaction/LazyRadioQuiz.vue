@@ -21,21 +21,14 @@
 </template>
 
 <script setup lang="ts">
-import type {
-  SelectInteractionContent,
-  SelectQuizAnswer,
-  RadioQuiz,
-} from "~/model/interaction-content";
-
+import type { SelectQuizAnswer, RadioQuiz } from "~/model/interaction-content";
 const props = defineProps<{
   interactionPath: string;
 }>();
-
 // current quiz from JSON
 const quiz = ref<RadioQuiz | null>(null);
 const answered = ref(false);
 const selectedAnswer = ref<SelectQuizAnswer | null>(null);
-
 /**
  *  Load quiz from JSON
  * @property {string} interactionPath - path to JSON file holding the quiz data
@@ -56,9 +49,7 @@ async function loadQuiz() {
     console.error(error);
   }
 }
-
 const quizBtnContainer = ref<HTMLElement | null>(null);
-
 /**
  * Store selection in sessionStorage
  * @var {string} key - key to store answers in sessionStorage
@@ -67,7 +58,6 @@ const quizBtnContainer = ref<HTMLElement | null>(null);
 function select(a: SelectQuizAnswer) {
   const key = `${quiz.value?.quizId ?? "quiz"}:${quiz.value?.title}`;
   const value = a.correct === 1 ? 5 : 0;
-
   // store kv pair
   sessionStorage.setItem(
     key,
@@ -83,7 +73,6 @@ function select(a: SelectQuizAnswer) {
   // DEBUG:
   console.log(`Stored selection for ${key}:`, a);
 }
-
 onMounted(() => {
   loadQuiz();
 });

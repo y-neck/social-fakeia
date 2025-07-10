@@ -1,11 +1,11 @@
 <template>
-  <Header class="px-site-spacing" />
+  <Header preload class="px-site-spacing" />
   <div
     class="bottom-0 flex flex-col gap-md bg-background px-site-spacing font-atkinson text-text"
   >
     <slot></slot>
   </div>
-  <Footer />
+  <Footer loading="lazy" />
 </template>
 
 <style scoped></style>

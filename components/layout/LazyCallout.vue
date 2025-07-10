@@ -1,5 +1,4 @@
 <!-- Use Vue with... (n.d.). Font Awesome Docs. https://docs.fontawesome.com/web/use-with/vue/use-with -->
-
 <template>
   <div
     class="flex flex-col gap-md rounded-[16px] border-1 border-text bg-bg-transparent p-4 text-text"

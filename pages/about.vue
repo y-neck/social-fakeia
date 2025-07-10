@@ -106,7 +106,9 @@
             alt="Portrait von Yannick Spriessler"
             loading="lazy"
             format="webp"
-            class="h-30 rounded-lg object-contain"
+            class="h-30 rounded-lg object-contain max-md:self-center"
+            width="88"
+            height="120"
           />
           <p>
             Mein Name ist Yannick Spriessler. Ich habe von 2022 bis 2025 an der
@@ -136,7 +138,7 @@
           Nerd wie ich – also lass uns anschauen, wie diese Website umgesetzt
           wurde:
         </p>
-        <h2 class="text-fsize-h3">Verwendete Technologien</h2>
+        <h2 class="text-fsize-h3 text-primary">Verwendete Technologien</h2>
         <ul id="tech-stack">
           <li>
             <LazyLinkPreview url="https://nuxt.com" target="_blank"

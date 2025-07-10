@@ -1,5 +1,4 @@
 <!-- Audio Player embed from audio.com -->
-
 <template>
   <div>
     <ClientOnly>
@@ -18,6 +17,7 @@
             height: 204px;
             width: 100%;
           "
+          :title="props.title"
         ></iframe>
       </div>
       <Skeleton v-if="!audioPlayer || !props.src" class="h-56 w-full" />
@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Skeleton from "../ui/skeleton/Skeleton.vue";
-const props = defineProps<{ src: string }>();
+const props = defineProps<{ src: string, title?:string }>();
 const audioPlayer = ref<HTMLElement | null>(null);
 </script>
 

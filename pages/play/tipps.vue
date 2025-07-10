@@ -121,7 +121,6 @@ li {
   opacity: 0;
   transform: translateX(-10%);
 }
-
 /* staggered animation */
 li:nth-of-type(1) {
   animation-delay: 0s;
@@ -144,14 +143,12 @@ li:nth-of-type(6) {
 li:nth-of-type(7) {
   animation-delay: 0.6s;
 }
-
 @keyframes slide-in {
   to {
     transform: translateX(0);
     opacity: 1;
   }
 }
-
 li.animate {
   animation-name: slide-in;
   animation-duration: 0.4s;
@@ -162,12 +159,10 @@ li.animate {
   width: calc(3 / 4 * 100%) /* 75% */;
   text-align: center;
 }
-
 .fa-icon {
   font-size: var(--text-fsize-h1) /* 2rem = 32px */;
   color: var(--color-accent);
 }
-
 @media (width >= 48rem /* 768px -> md */) {
   ul {
     display: flex;

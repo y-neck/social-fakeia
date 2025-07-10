@@ -1,5 +1,4 @@
 <!-- Google for Developers. (n.d.). YouTube Player API Reference for iframe Embeds | YouTube IFrame Player API. https://developers.google.com/youtube/iframe_api_reference -->
-
 <template>
   <ClientOnly>
     <div :class="['video-frame', props.styling]">
@@ -24,7 +23,6 @@
 <script setup lang="ts">
 import Skeleton from "../ui/skeleton/Skeleton.vue";
 import { ref, onMounted, watch } from "vue";
-
 const props = defineProps<{
   videoId: string;
   scriptPath?: string;
@@ -32,13 +30,10 @@ const props = defineProps<{
 }>();
 const playerContainer = ref<HTMLElement | null>(null);
 let player: YT.Player;
-
 /* JSON timestamps */
 const comments = ref<Array<{ time: number; text: string }>>([]); // construct comments as array
 const visibleComments = ref<Array<{ time: number; text: string }>>([]);
-
 let intervalId: number;
-
 /**
  * fetches comments from a JSON file and updates the {@link comments} state with it.
  * @async
@@ -55,7 +50,6 @@ async function loadComments() {
   const response = await fetch(props.scriptPath); /* fetch comments */
   comments.value = await response.json();
 }
-
 /* Player */
 /**
  * Initializes the YouTube player with the given video ID and settings.
@@ -86,7 +80,6 @@ function initPlayer() {
 function handleApiReady() {
   initPlayer();
 }
-
 // enable polling to check currentTime
 function startPolling() {
   // set polling interval in ms for retrieving comments
@@ -99,7 +92,6 @@ function startPolling() {
     );
   }, 500);
 }
-
 // initialize player once
 onMounted(async () => {
   await loadComments();
@@ -116,10 +108,8 @@ onBeforeUnmount(() => {
     player = undefined!;
   }
 });
-
 // call function when video player is ready
 function onPlayerReady(event: any) {}
-
 // call function when player's state changes
 function onPlayerStateChange(event: any) {
   if (event.data === YT.PlayerState.PLAYING) {

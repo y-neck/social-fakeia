@@ -7,24 +7,11 @@ import {
     Tooltip,
     Legend,
     Title,
-    plugins,
 } from "chart.js";
-
-
-ChartJS.register(
-    BarController,
-    BarElement,
-    CategoryScale,
-    LinearScale,
-    Tooltip,
-    Legend,
-    Title
-);
-
+ChartJS.register(BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend, Title);
 export function getChartType() {
     return "bar";
 }
-
 export function getChartConfig(rawData) {
     const emotionalityLut = {
         "1": "Freude/Humor",
@@ -33,11 +20,9 @@ export function getChartConfig(rawData) {
         "4": "Anwiderung",
         "5": "Angst",
         "6": "Erstaunen",
-        "7": "Nicht erkennbar",
+        "7": "Nicht erkennbar"
     };
-
     const totalRows = rawData.length;
-
     // compute frequencies
     function computeFrequencies(fieldName, sourceLabel) {
         const counts = {};
@@ -48,27 +33,23 @@ export function getChartConfig(rawData) {
             }
             counts[value]++; // increment count for the current value
         });
-
-        return Object.entries(counts).map(([key, count]) => ({
-            sentiment: emotionalityLut[key] || "Nicht erkennbar",
-            relative_freq: (count / totalRows) * 100,
-            source: sourceLabel
-        }))
+        return Object
+            .entries(counts)
+            .map(([key, count]) => ({
+                sentiment: emotionalityLut[key] || "Nicht erkennbar",
+                relative_freq: (count / totalRows) * 100,
+                source: sourceLabel
+            }))
     }
-
     // map json keys to frequencies
     const postSentiment = computeFrequencies("post_sentiment", "Beitrag");
     const visualSentiment = computeFrequencies("visual_sentiment", "Visuelles Artefakt");
     const allSentiments = Object.values(emotionalityLut)
-
     // initialise dataset arrays with zero values
-    const postData = allSentiments.map(label =>
-        postSentiment.find(d => d.sentiment === label)?.relative_freq || 0
-    );
-    const visualData = allSentiments.map(label =>
-        visualSentiment.find(d => d.sentiment === label)?.relative_freq || 0
-    );
-
+    const postData = allSentiments.map(label => postSentiment.find(d => d.sentiment === label)
+        ?.relative_freq || 0);
+    const visualData = allSentiments.map(label => visualSentiment.find(d => d.sentiment === label)
+        ?.relative_freq || 0);
     return {
         data: {
             labels: allSentiments,
@@ -77,13 +58,12 @@ export function getChartConfig(rawData) {
                     label: "Beitragsemotionalität",
                     data: postData,
                     backgroundColor: '#1ABC9C', // sea-green
-                },
-                {
+                }, {
                     label: "Visuelles Artefakt",
                     data: visualData,
                     backgroundColor: '#E67E73', // rosy-brown
-                },
-            ],
+                }
+            ]
         },
         options: {
             plugins: {
@@ -96,30 +76,29 @@ export function getChartConfig(rawData) {
                     ticks: {
                         color: "var(--color-text)",
                         maxRotation: 45,
-                        minRotation: 45,
+                        minRotation: 45
                     },
                     title: {
                         display: true,
                         text: "Emotionalität",
-                        color: "var(--color-text)",
+                        color: "var(--color-text)"
                     },
-                    stacked: false,
+                    stacked: false
                 },
                 y: {
                     beginAtZero: true,
                     title: {
                         display: true,
                         text: "Relative Häufigkeit (%)",
-                        color: "var(--color-text)",
+                        color: "var(--color-text)"
                     },
                     ticks: {
                         color: "var(--color-text)",
-                        callback: (val) => `${val}%`,
-                    },
-                },
+                        callback: (val) => `${val}%`
+                    }
+                }
             }
         }
     }
 }
-
 export default { getChartType, getChartConfig };

@@ -8,7 +8,6 @@ import {
   CategoryScale,
   LinearScale,
 } from "chart.js";
-
 ChartJS.register(
   Title,
   Tooltip,
@@ -17,5 +16,4 @@ ChartJS.register(
   CategoryScale,
   LinearScale,
 );
-
 export default defineNuxtPlugin(() => {});

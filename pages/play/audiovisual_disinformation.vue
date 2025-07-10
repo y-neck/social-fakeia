@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-md">
     <h1>Audiovisuelle Desinformation</h1>
-    <LazyCallout title="Audiovisuelle Desinformation" icon="camera">
+    <LazyCallout title="Audiovisuelle Desinformation" icon="camera" preload>
       <p>
         Unter (audio-) visueller Desinformation versteht man alle Formen von
         Desinformation, bei welchen desinformierende Bilder (visuell) oder
@@ -28,14 +28,15 @@
       bei welchen Menschen falsch dargestellt werden und ihnen somit falsche
       Aussagen unterstellt werden können.
     </p>
-    <section class="examples">
-      <div class="examples-inner" loading="lazy">
+    <section class="examples" loading="lazy">
+      <div class="examples-inner">
         <NuxtImg
           src="img/Ex1.webp"
           alt="Beispiel 1"
           class="example-img"
           format="webp"
           loading="lazy"
+          height="300"
         />
         <NuxtImg
           src="img/Ex2.webp"
@@ -43,6 +44,7 @@
           class="example-img"
           format="webp"
           loading="lazy"
+          height="300"
         />
         <NuxtImg
           src="img/Ex3.webp"
@@ -50,6 +52,7 @@
           class="example-img"
           format="webp"
           loading="lazy"
+          height="300"
         />
         <NuxtImg
           src="img/Ex4.webp"
@@ -57,6 +60,7 @@
           class="example-img"
           format="webp"
           loading="lazy"
+          height="300"
         />
       </div>
     </section>
@@ -105,8 +109,6 @@ import LazyLinkPreview from "~/components/ui/link-preview/LazyLinkPreview.vue";
 useSeoMeta({
   title: "Audiovisuelle Desinformation" /* Page title */,
   ogTitle: "Audiovisuelle Desinformation" /* Page title without branding */,
-  description: "",
-  ogDescription: "",
 });
 definePageMeta({
   title: "Audiovisuelle Desinformation",

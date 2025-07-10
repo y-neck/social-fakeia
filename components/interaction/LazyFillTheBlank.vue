@@ -18,19 +18,11 @@
 </template>
 
 <script setup lang="ts">
-import type {
-  FillTheBlankInteractionContent,
-  FillTheBlankAnswer,
-  FillTheBlankAnswerGroup,
-  FillTheBlankQuiz,
-} from "~/model/interaction-content";
+import type { FillTheBlankQuiz } from "~/model/interaction-content";
 import LazyButton from "../common/LazyButton.vue";
-import DropDown from "../ui/dropdown-menu/DropDown.vue";
-
 const props = defineProps<{
   interactionPath: string;
 }>();
-
 // current quiz from json
 const quiz = ref<FillTheBlankQuiz | null>(null);
 const quizTextContainer = ref<HTMLElement | null>(null);
@@ -44,7 +36,6 @@ const correctness = reactive<Record<number, boolean>>({});
 provide("quiz", quiz);
 provide("selected", selected);
 provide("confirmed", quizBtnConfirmed);
-
 /**
  *  load quiz from JSON
  * @property {string} interactionPath - path to JSON file holding the quiz data
@@ -69,7 +60,6 @@ async function loadQuiz() {
     console.error(error);
   }
 }
-
 /**
  * compare the correct answers with the user-selected anwers
  * store the correctness state in sessionStorage and deactivate button
@@ -82,7 +72,6 @@ async function confirmAnswers() {
     (answer) => selected[answer.answerId] !== "",
   );
   if (!quiz.value || !allAnswersSelected) return;
-
   // store correct answers
   const correctMap: Record<number, string> = {};
   quiz.value?.answers.forEach((group) => {
@@ -90,7 +79,6 @@ async function confirmAnswers() {
     // assign correct answer
     correctMap[group.answerId] = correct ? correct.singleAnswer : "";
   });
-
   // compare user answers to correct answers
   const allAnswers = quiz.value?.answers.map((group) => group.answerId);
   const allMatch = allAnswers.every((id) => {
@@ -98,10 +86,8 @@ async function confirmAnswers() {
     correctness[id] = correctGiven;
     return correctGiven;
   });
-
   // cooldown before check
   await nextTick();
-
   // show correctness
   allAnswers.forEach((id) => {
     const trigger = document.querySelector<HTMLElement>(
@@ -111,7 +97,6 @@ async function confirmAnswers() {
     trigger.classList.toggle("correct", correctness[id]);
     trigger.classList.toggle("incorrect", !correctness[id]);
   });
-
   // store kv pair in sessionStorage
   const key = `${quiz.value?.quizId}:${quiz.value?.title}`;
   const correctCount = Object.values(correctness).filter(Boolean).length;
@@ -126,11 +111,9 @@ async function confirmAnswers() {
       value: scaled,
     }),
   );
-
   // disable confirm button
   quizBtnConfirmed.value = true;
 }
-
 onMounted(() => {
   loadQuiz();
 });

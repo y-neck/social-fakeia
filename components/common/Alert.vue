@@ -32,7 +32,6 @@ const props = defineProps<{
 .alert-backdrop {
   z-index: 50; /* ensure it's above other content */
 }
-
 /* Button styling */
 button {
   padding: 0.5rem 1rem;

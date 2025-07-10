@@ -25,7 +25,11 @@
         und gesundheitsbezogenen Themen ab, auch Wissenschafts- und Klimathemen
         leisten einen grossen Beitrag. Dies ist kein Zufall:
       </p>
-      <LazyVideoPlayer video-id="dbOCA1f8p7Q" title="Video: Von Desinformation betroffene Themen"/>
+      <LazyVideoPlayer
+        preload
+        video-id="dbOCA1f8p7Q"
+        title="Video: Von Desinformation betroffene Themen"
+      />
       <p>
         Bei einem Grossteil der Beiträge handelt es sich um statische Bilder und
         Grafiken, Videos werden nur in etwa 20% der Fälle verwendet. Meistens
@@ -182,8 +186,6 @@ import LazyLinkPreview from "~/components/ui/link-preview/LazyLinkPreview.vue";
 useSeoMeta({
   title: "Untersuchung" /* Page title */,
   ogTitle: "Untersuchung" /* Page title without branding */,
-  description: "",
-  ogDescription: "",
 });
 definePageMeta({
   title: "Untersuchung",

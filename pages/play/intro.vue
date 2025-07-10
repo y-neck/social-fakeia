@@ -8,6 +8,7 @@
       confirm-btn-text="Einverstanden"
       :cancel-btn-action="navigateHome"
       :confirm-btn-action="closeAlert"
+      preload
     >
       <h1 class="sr-only">Intro</h1>
     </Alert>
@@ -17,6 +18,7 @@
       name="stagger"
       class="flex flex-col gap-xl"
       appear
+      preload
     >
       <!-- appear: trigger animation on first render -->
       <h1 class="sr-only">Intro</h1>
@@ -34,7 +36,7 @@
         :style="{ '--index': bubbleMessages.length }"
         :key="`quiz-${bubbleMessages.length}`"
       >
-        <RadioQuiz interaction-path="intro-quiz" />
+        <LazyRadioQuiz interaction-path="intro-quiz" />
         <LazyButton
           v-if="!proceedBtnClicked"
           content="Ich möchte mehr über Desinformation erfahren"
@@ -44,7 +46,7 @@
         />
       </section>
     </transition-group>
-    <div id="part-two" v-show="proceedBtnClicked">
+    <div id="part-two" v-show="proceedBtnClicked" loading="lazy">
       <section id="self-assessment-section fit-content">
         <h2 class="text-center">
           Wie schätzt du deine Kenntnis bezüglich Desinformation ein?
@@ -101,9 +103,8 @@
 <script setup lang="ts">
 import Alert from "~/components/common/Alert.vue";
 import { useRouter } from "vue-router";
-import ProgressBar from "~/components/layout/ProgressBar.vue";
 import LazyButton from "~/components/common/LazyButton.vue";
-import RadioQuiz from "~/components/interaction/LazyRadioQuiz.vue";
+import LazyRadioQuiz from "~/components/interaction/LazyRadioQuiz.vue";
 import LazyVideoPlayer from "~/components/content/LazyVideoPlayer.vue";
 
 const bubbleMessages = [
@@ -114,21 +115,17 @@ const bubbleMessages = [
   "Im Video wird behauptet, dass 5G‑Strahlung von Funkantennen Krebs verursache.",
   "Du bist dir unsicher; eigentlich hältst du es nicht für wahr… aber was, wenn es vielleicht doch stimmt?",
 ];
-
 /* Alert */
 const router = useRouter();
 const alertShown = ref(false);
-
 onMounted(() => {
   alertShown.value = sessionStorage.getItem("alertShown") === "true";
 });
-
 /**
  * Closes the alert by setting the alertClosed state to true,
  * stores the alertShown state in sessionStorage to persist the alert's closed state,
  * and updates the alertShown state to true.
  */
-
 function closeAlert() {
   sessionStorage.setItem("alertShown", "true");
   alertShown.value = true;
@@ -137,13 +134,11 @@ function navigateHome() {
   sessionStorage.clear();
   router.push("/");
 }
-
 /* proceed button */
 const proceedBtnClicked = ref(false);
 function proceed() {
   proceedBtnClicked.value = true;
 }
-
 /* self assessment slider */
 const selfAssessmentSliderValue = ref(3);
 /**
@@ -153,7 +148,6 @@ const selfAssessmentSliderValue = ref(3);
 function storeSelfAssessmentValue(value: number) {
   sessionStorage.setItem("selfAssessment", value.toString());
 }
-
 onMounted(() => {
   // Check if the alert has been closed before
   alertShown.value = sessionStorage.getItem("alertShown") === "true";
@@ -178,7 +172,6 @@ definePageMeta({
   color: var(--color-text-invert);
   width: fit-content;
 }
-
 /* https://vuejs.org/guide/built-ins/transition-group.html */
 .stagger-enter-active {
   transition:

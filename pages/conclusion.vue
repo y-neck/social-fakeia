@@ -1,14 +1,14 @@
 <template>
   <div class="flex flex-col gap-lg">
     <h1 class="self-center">Gratulation!</h1>
-    <p class="mx-16 text-center text-wrap">
+    <p class="text-balanced mx-16 text-center">
       Gratulation, du hast es geschafft! In den letzten Minuten hast du dich
       vertieft mit visueller und audiovisueller Desinformation auf Social-Media
       in der Schweiz auseinandergesetzt. Wieviel hast du wohl dabei gelernt?
     </p>
     <span class="text-center">Schauen wir es uns an:</span>
     <div id="conclusion-graph" class="mx-auto h-64 w-full md:h-128">
-      <canvas ref="conclusionChartRef"></canvas>
+      <canvas ref="conclusionChartRef" preload></canvas>
     </div>
     <p class="mx-16 text-center text-wrap">
       Hoffentlich konntest du durch dieses interaktive Spiel deine Kenntnisse zu
@@ -57,10 +57,8 @@ import {
   analysisResult,
   type QuizResult,
 } from "~/utils/conclusionGraphData";
-
 const conclusionChartRef = ref<HTMLCanvasElement | null>(null);
 const quizResults: QuizResult[] = [];
-
 onMounted(() => {
   // load quiz results
   for (const key of Object.keys(sessionStorage)) {
@@ -77,17 +75,9 @@ onMounted(() => {
       return;
     }
   }
-
   // accumulate values for categories
   const selfAssessmentValue = sessionStorage.getItem("selfAssessment");
   const selfAssessment = selfAssessmentValue ? Number(selfAssessmentValue) : 0;
-
-  const quizTopics = [
-    "general",
-    "current-disinformation",
-    "audiovisual-disinformation",
-    "results",
-  ];
   // lookup table for topics assignments
   const chartLabelsLut = [
     "Allgemein",
@@ -95,7 +85,6 @@ onMounted(() => {
     ["Audiovisuelle", "Desinformation"],
     "Resultate",
   ];
-
   const data = {
     labels: chartLabelsLut,
     datasets: [
@@ -199,8 +188,8 @@ onMounted(() => {
 useSeoMeta({
   title: "Lernkontrolle" /* Page title */,
   ogTitle: "Lernkontrolle" /* Page title without branding */,
-  description: "",
-  ogDescription: "",
+  description: "Deine Ergebnisse",
+  ogDescription: "Deine Ergebnisse",
 });
 definePageMeta({
   title: "Ziel",

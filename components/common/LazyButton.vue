@@ -1,5 +1,4 @@
 <!-- Aceternity UI. (n. d.). Tailwind CSS buttons. https://ui.aceternity.com/components/tailwindcss-buttons -->
-
 <template>
   <div>
     <button

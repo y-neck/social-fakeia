@@ -23,12 +23,6 @@ import type { ChartTypeRegistry } from "chart.js";
 import * as VueChartJS from "vue-chartjs";
 // register Chart.js controllers & scales
 ChartJS.register(Title, Tooltip, Legend, ChartDeferred);
-
-type ChartModule = {
-  getChartType(): string;
-  getChartConfig(data: any): { data: any; options?: any };
-};
-
 // define props
 const props = defineProps<{
   src: string; // dataset path .json
@@ -37,16 +31,13 @@ const props = defineProps<{
   width?: number;
   height?: number;
 }>();
-
 const chartData = ref();
 const chartOptions = ref();
 const chartComponent = ref<any>(null);
-
 // import chart-config module
 async function loadConfig() {
   // fetch data
   const rawData = await fetch(props.src).then((res) => res.json());
-
   // load config helper
   const modules = import.meta.glob("../../utils/charts/*.js", { eager: true });
   const key = `../../utils/charts/${props.chartPath}.js`;
@@ -55,7 +46,6 @@ async function loadConfig() {
     console.error(`Chart config module not found: ${key}`);
     return;
   }
-
   const type = module.getChartType();
   const ChartComp = (VueChartJS as any)[
     type.charAt(0).toUpperCase() + type.slice(1)
@@ -64,7 +54,6 @@ async function loadConfig() {
     console.error("No component found for type", type);
     return;
   }
-
   /* build config */
   // get css variables
   const root = getComputedStyle(document.documentElement);
@@ -75,7 +64,6 @@ async function loadConfig() {
   const textTransparent = root
     .getPropertyValue("--color-text-transparent")
     .trim();
-
   const { data, options } = module.getChartConfig(rawData);
   chartComponent.value = ChartComp;
   /* chart data */
@@ -153,7 +141,6 @@ async function loadConfig() {
     },
   };
 }
-
 onMounted(() => {
   loadConfig();
 });

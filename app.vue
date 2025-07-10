@@ -12,6 +12,6 @@ useSeoMeta({
   ogType: "website",
   creator: "Yannick Spriessler",
   robots: "index, follow",
-  ogImage: "" /* Image for sharing */,
+  ogImage: "/img/favicon_text.webp" /* Image for sharing */,
 });
 </script>

@@ -5,6 +5,8 @@
       <LazyCallout
         title="«Aktuelle Desinformation» – Häääää?!"
         icon="clipboard-question"
+        preload
+        loading="eager"
       >
         <p>
           Vielleicht fragst du dich, was mit diesem Begriff gemeint ist?
@@ -14,9 +16,9 @@
             class="underline"
             >Dieser wird jedoch in der Wissenschaft seltener
             verwendet,</LinkPreview
-          > da er oft als politisches Schlagwort genutzt wird. Auf dieser
-          Website wird deshalb der Begriff der aktuellen Desinformation
-          gebraucht.
+          >
+          da er oft als politisches Schlagwort genutzt wird. Auf dieser Website
+          wird deshalb der Begriff der aktuellen Desinformation gebraucht.
         </p>
       </LazyCallout>
       <Quote
@@ -89,12 +91,11 @@
         </li>
       </ul>
     </section>
-    <ClientOnly
-      ><LazyVideoPlayer
-        video-id="mUZj5iC0YoA"
-        script-path="/timestamps/definition-comment.json"
-        title="Video: Definition von aktueller Desinformation"
-    /></ClientOnly>
+    <LazyVideoPlayer
+      video-id="mUZj5iC0YoA"
+      script-path="/timestamps/definition-comment.json"
+      title="Video: Definition von aktueller Desinformation"
+    />
     <section id="definition-quiz-section">
       <LazyRadioQuiz interaction-path="definition-quiz" />
     </section>
@@ -108,7 +109,6 @@
 </template>
 
 <script setup lang="ts">
-import ProgressBar from "~/components/layout/ProgressBar.vue";
 import LazyCallout from "~/components/layout/LazyCallout.vue";
 import LinkPreview from "~/components/ui/link-preview/LazyLinkPreview.vue";
 import Quote from "~/components/Other/Quote.vue";
@@ -119,8 +119,6 @@ import LazyButton from "~/components/common/LazyButton.vue";
 useSeoMeta({
   title: "Was ist aktuelle Desinformation?" /* Page title */,
   ogTitle: "Was ist aktuelle Desinformation?" /* Page title without branding */,
-  description: "",
-  ogDescription: "",
 });
 definePageMeta({
   title: "Definition",
@@ -151,7 +149,6 @@ li {
   opacity: 0;
   transform: translateX(-10%);
 }
-
 /* staggered animation */
 li:nth-of-type(1) {
   animation-delay: 0s;
@@ -171,14 +168,12 @@ li:nth-of-type(5) {
 li:nth-of-type(6) {
   animation-delay: 0.5s;
 }
-
 @keyframes slide-in {
   to {
     transform: translateX(0);
     opacity: 1;
   }
 }
-
 li.animate {
   animation-name: slide-in;
   animation-duration: 0.4s;
@@ -194,7 +189,6 @@ li.animate {
   font-size: var(--text-fsize-h1) /* 2rem = 32px */;
   color: var(--color-accent);
 }
-
 @media (width >= 48rem /* 768px -> md */) {
   ul {
     display: flex;

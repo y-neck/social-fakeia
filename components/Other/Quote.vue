@@ -13,7 +13,6 @@
 
 <script setup lang="ts">
 import LinkPreview from "../ui/link-preview/LazyLinkPreview.vue";
-
 const props = defineProps<{
   src: string;
   srcName: string;

@@ -41,17 +41,14 @@ import type {
   CheckboxQuiz,
 } from "~/model/interaction-content";
 import LazyButton from "../common/LazyButton.vue";
-
 const props = defineProps<{
   interactionPath: string;
 }>();
-
 // current quiz from JSON
 const quiz = ref<CheckboxQuiz | null>(null);
 const quizCheckboxContainer = ref<HTMLElement | null>(null);
 const quizConfirmBtn = ref<HTMLElement | null>(null);
 const quizBtnConfirmed = ref(false);
-
 /**
  *  load quiz from JSON
  * @property {string} interactionPath - path to JSON file holding the quiz data
@@ -72,7 +69,6 @@ async function loadQuiz() {
     console.error(error);
   }
 }
-
 /**
  * store answers in sessionStorage and deactivate button
  * @property {Array<QuizAnswer>} answers - user answers
@@ -90,7 +86,6 @@ function confirmAnswers() {
     ),
   );
   const userAnswers = answers.map((cb) => (cb.checked ? 1 : 0));
-
   // count matches between user answers and correct answers and map to 0-5
   const correctCount = userAnswers.reduce<number>(
     (sum, bit, i) => sum + (bit === correctAnswers[i] ? 1 : 0),
@@ -103,7 +98,6 @@ function confirmAnswers() {
     const label = quizCheckboxContainer.value!.querySelector<HTMLLabelElement>(
       `label[for="${CSS.escape(answer.id)}"]`,
     )!;
-
     (answer.checked ? 1 : 0) === correctAnswers[id]
       ? label.classList.add("correct")
       : label.classList.add("incorrect");
@@ -118,11 +112,9 @@ function confirmAnswers() {
       value: scaled,
     }),
   );
-
   // disable confirm button
   quizBtnConfirmed.value = true;
 }
-
 onMounted(() => {
   loadQuiz();
 });

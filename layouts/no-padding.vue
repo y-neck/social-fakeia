@@ -1,10 +1,10 @@
 <template>
   <div class="flex min-h-screen flex-col bg-background font-atkinson text-text">
-    <Header class="px-site-spacing" />
+    <Header class="px-site-spacing" preload/>
     <slot
       
     ></slot>
-    <Footer class="px-site-spacing" />
+    <Footer class="px-site-spacing" loading="lazy"/>
   </div>
 </template>
 

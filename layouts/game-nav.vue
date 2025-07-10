@@ -1,5 +1,5 @@
 <template>
-  <Header class="px-site-spacing" />
+  <Header class="px-site-spacing" preload />
   <div
     class="bottom-0 gap-md bg-background px-site-spacing font-atkinson text-text"
   >
@@ -29,19 +29,17 @@
       </nav>
     </div>
   </div>
-  <Footer />
+  <Footer loading="lazy" />
 </template>
 
 <script setup lang="ts">
 import Header from "~/components/layout/Header.vue";
 import Footer from "~/components/layout/LazyFooter.vue";
 import ProgressBar from "~/components/layout/ProgressBar.vue";
-
 const contentRef = ref<HTMLElement | null>(null);
 const toc = reactive<
   { id: string; text: string; level: number; active: boolean }[]
 >([]);
-
 /**
  * build the table of contents scanning slot contentRef for h1, h2, h3
  * auto-assign ids as slugified texts
@@ -64,10 +62,8 @@ function buildToc() {
     });
   });
 }
-
 const visible = ref<string[]>([]);
 let observer: IntersectionObserver;
-
 const activeId = computed(() =>
   visible.value.length ? visible.value[visible.value.length - 1] : null,
 );
@@ -106,12 +102,10 @@ function setupObserver() {
     if (el) observer.observe(el);
   });
 }
-
 onMounted(() => {
   buildToc();
   setupObserver();
 });
-
 onBeforeUnmount(() => {
   if (observer) observer.disconnect();
 });

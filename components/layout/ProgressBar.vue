@@ -11,10 +11,11 @@
           ? 'bg-secondary text-text-invert'
           : 'bg-bg-transparent hover:bg-accent hover:text-text-invert',
       ]"
+      :aria-label="item.label"
     >
       <span
         class="tab-label hidden min-h-1 max-md:hover:block lg:inline-block"
-        aria-label="{{ item.label }}"
+        :aria-label="item.label"
         :data-tooltip="item.label"
         >{{ item.label }}</span
       >
@@ -24,7 +25,6 @@
 
 <script setup lang="ts">
 import { usePlayTabs } from "~/composables/usePlayTabs";
-
 const { tabs, currentPath, go } = usePlayTabs();
 </script>
 
@@ -44,7 +44,6 @@ const { tabs, currentPath, go } = usePlayTabs();
   font-weight: bold;
   color: var(--color-text);
 }
-
 /* Expand the clickable area invisibly around the button */
 @media (pointer: coarse) {
   .button::after {

@@ -145,7 +145,7 @@
           Erwartungen geweckt und Orientierung geboten.</LinkPreview
         >
       </p>
-      <LazyAudioPlayer src="1835715834874405" />
+      <LazyAudioPlayer src="1835715834874405" title="Audio: Produktion von Desinformation" />
       <p>
         <LinkPreview
           url="https://doi.org/10.1108/JPBM-12-2018-2155"
@@ -206,7 +206,6 @@
 </template>
 
 <script setup lang="ts">
-import ProgressBar from "~/components/layout/ProgressBar.vue";
 import LinkPreview from "~/components/ui/link-preview/LazyLinkPreview.vue";
 import LazyVideoPlayer from "~/components/content/LazyVideoPlayer.vue";
 import LazyAudioPlayer from "~/components/content/LazyAudioPlayer.vue";
@@ -216,8 +215,6 @@ import LazyButton from "~/components/common/LazyButton.vue";
 useSeoMeta({
   title: "Aktuelle Desinformation" /* Page title */,
   ogTitle: "Aktuelle Desinformation" /* Page title without branding */,
-  description: "",
-  ogDescription: "",
 });
 definePageMeta({
   title: "Aktuelle Desinformation",
