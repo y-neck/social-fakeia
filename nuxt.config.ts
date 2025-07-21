@@ -47,6 +47,33 @@ export default defineNuxtConfig({
           href: "/favicon.ico",
         },
       ],
+      script: [
+        // Matomo Tracking Code
+        {
+          hid: "matomo", // Unique identifier for the script
+          innerHTML: `
+            var _paq = window._paq = window._paq || [];
+
+              // accurately measure the time spent in the visit
+              _paq.push(['enableHeartBeatTimer']);
+
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+              _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+              _paq.push(["setDoNotTrack", true]);
+              _paq.push(['trackPageView']);
+              _paq.push(['enableLinkTracking']);
+              (function() {
+                var u="//analytix.neckxproductions.ch/";
+                _paq.push(['setTrackerUrl', u+'matomo.php']);
+                _paq.push(['setSiteId', '2']);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+              })();
+              console.log('matomo loaded');
+              `,
+          type: "text/javascript",
+        },
+      ],
     },
   },
   css: [
