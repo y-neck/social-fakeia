@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-md">
     <section id="tips-section">
-      <h1 class="text-fsize-h1">Tipps gegen Desinformation</h1>
+      <h1 class="text-fsize-h1">Tipps zum Umgang mit Desinformation</h1>
       <p>
         Du solltest nun wissen, was Desinformation ist und wie sie verbreitet
         wird. Du hast ausserdem gelernt, wie visuelle und audiovisuelle

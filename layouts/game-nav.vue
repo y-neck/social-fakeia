@@ -1,7 +1,7 @@
 <template>
-  <Header class="px-site-spacing" preload />
+  <Header class="bg-background px-site-spacing" preload />
   <div
-    class="bottom-0 gap-md bg-background px-site-spacing font-atkinson text-text"
+    class="bottom-0 gap-md bg-background px-4 md:px-site-spacing font-atkinson text-text"
   >
     <ProgressBar />
     <div id="wrapper" class="flex flex-col gap-md md:flex-row md:gap-0">

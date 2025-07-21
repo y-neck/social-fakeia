@@ -61,16 +61,16 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-text: rgb(238, 238, 238);
-    --color-text-invert: rgb(17, 17, 17);
-    --color-text-transparent: rgba(238, 238, 238, 0.5);
-    --color-bg-transparent: rgba(238, 238, 238, 0.3);
-    --color-background: rgb(2, 11, 7);
-    --color-primary: rgb(73, 192, 172);
-    --color-primary-transparent: rgba(73, 192, 172, 0.2);
-    --color-secondary: rgb(62, 145, 126);
-    --color-secondary-transparent: rgba(62, 145, 126, 0.2);
-    --color-accent: rgb(22, 208, 124);
+  --color-text: rgb(238, 238, 238);
+  --color-text-invert: rgb(17, 17, 17);
+  --color-text-transparent: rgba(238, 238, 238, 0.5);
+  --color-bg-transparent: rgba(80, 80, 80, 0.3);
+  --color-background: rgb(2, 11, 7);
+  --color-primary: rgb(74, 215, 192);
+  --color-primary-transparent: rgba(73, 192, 172, 0.2);
+  --color-secondary: rgb(62, 145, 126);
+  --color-secondary-transparent: rgba(62, 145, 126, 0.2);
+  --color-accent: rgb(22, 208, 124);
   }
 }
 @custom-variant dark (&:where(.dark, .dark *));

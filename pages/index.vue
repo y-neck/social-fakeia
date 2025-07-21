@@ -1,10 +1,13 @@
 <template>
-  <div id="hero" class="flex h-[80vh] max-h-[80vh] flex-col items-center">
-    <NuxtImg
+  <div
+    id="hero"
+    class="relative flex h-[80vh] max-h-[80vh] w-full flex-col items-center bg-background"
+  >
+    <img
       src="/img/worldMap.webp"
       preload
       loading="eager"
-      class="object-cover"
+      class="absolute inset-0 h-full w-full bg-background object-cover"
       fetchpriority="high"
       alt="world map"
       height="500"
@@ -41,7 +44,7 @@
     class="flex flex-col gap-md bg-background max-sm:mt-[68px]"
     loading="lazy"
   >
-    <div id="interview-section" class="flex flex-col gap-md px-16">
+    <div id="interview-section" class="flex flex-col gap-md px-8 md:px-16">
       <h2 class="text-fsize-h2 text-secondary">Experteninterviews</h2>
       <p class="text-text">
         Für dieses Projekt wurden zwei Experteninterviews zum Thema

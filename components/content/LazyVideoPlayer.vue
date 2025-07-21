@@ -1,7 +1,7 @@
 <!-- Google for Developers. (n.d.). YouTube Player API Reference for iframe Embeds | YouTube IFrame Player API. https://developers.google.com/youtube/iframe_api_reference -->
 <template>
   <ClientOnly>
-    <div :class="['video-frame', props.styling]">
+    <div :class="['video-frame w-full bg-background', props.styling]">
       <div ref="playerContainer" class="aspect-video w-full"></div>
       <div class="video-information flex h-fit min-h-8 w-full">
         <span

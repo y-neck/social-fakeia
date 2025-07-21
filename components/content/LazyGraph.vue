@@ -1,6 +1,6 @@
 <template>
   <ClientOnly>
-    <div class="flex flex-col items-center">
+    <div class="flex w-full flex-col items-center bg-background">
       <div class="chart-container w-4/5">
         <component
           v-if="chartComponent && chartData"

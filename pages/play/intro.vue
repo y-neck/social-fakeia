@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-md">
+  <div class="flex min-h-full flex-col gap-md bg-background">
     <Alert
       v-if="!alertShown"
       ref="start-alert"

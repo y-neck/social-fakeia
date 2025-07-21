@@ -10,6 +10,7 @@
         Kontakt:
         <a
           href="mailto:yannick@neckxproductions.ch?subject=Website Social Fakeia"
+          class="text-accent"
           >yannick@neckxproductions.ch</a
         >
       </p>

@@ -29,7 +29,7 @@
       Aussagen unterstellt werden können.
     </p>
     <section class="examples" loading="lazy">
-      <div class="examples-inner">
+      <div class="examples-inner bg-background">
         <NuxtImg
           src="img/Ex1.webp"
           alt="Beispiel 1"
@@ -86,8 +86,14 @@
       Dadurch stellt visuelle und audiovisuelle Desinformation nochmals eine
       besondere Gefahr dar.
     </p>
-    <LazyVideoPlayer video-id="s9iYilODevs" title="Video: Audiovisuelle Desinformation" />
-    <LazyRadioQuiz interaction-path="audiovisual-disinformation-quiz" script-path="/timestamps/audiovisual-disinformation.json" />
+    <LazyVideoPlayer
+      video-id="s9iYilODevs"
+      title="Video: Audiovisuelle Desinformation"
+    />
+    <LazyRadioQuiz
+      interaction-path="audiovisual-disinformation-quiz"
+      script-path="/timestamps/audiovisual-disinformation.json"
+    />
     <LazyButton
       content="Weiter"
       textStyling="text-fSize-p"
