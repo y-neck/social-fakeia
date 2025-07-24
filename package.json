@@ -47,7 +47,7 @@
     "@nuxtjs/partytown": "^1.6.0",
     "@types/d3": "^7.4.3",
     "@types/youtube": "^0.1.2",
-    "@vitejs/plugin-vue-jsx": "^4.2.0",
+    "@vitejs/plugin-vue-jsx": "^5.0.1",
     "nuxt-compress": "^5.0.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.12",
