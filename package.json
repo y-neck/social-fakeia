@@ -42,7 +42,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^7.0.0",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@nuxtjs/partytown": "^1.6.0",
     "@types/d3": "^7.4.3",
