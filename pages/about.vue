@@ -45,7 +45,7 @@
     </section>
     <section id="download-section" class="items-center pb-4">
       <h2>Download</h2>
-      <p class="px-4 text-center text-pretty text-accent">
+      <!-- <p class="px-4 text-center text-pretty text-accent">
         Bald kannst du hier die Thesis herunterladen! Wenn du jetzt schon
         Interesse daran hast, schreibe mir gerne eine
         <a
@@ -54,26 +54,29 @@
           >Mail</a
         >
         , um sie dann sofort zu erhalten, sobald sie fertig ist.
-      </p>
-      <!-- <p id="download-text">
+      </p> -->
+      <p id="download-text">
         Hier kannst du die Thesis als PDF oder Bib-Eintrag herunterladen:
       </p>
-       <div id="download-btns" class="flex w-full justify-center gap-md">
-        <Button content="PDF" id="download-button" textStyling="text-fsize-p" />
+      <div id="download-btns" class="flex w-full justify-center gap-md">
+        <Button
+          content="PDF"
+          id="download-button"
+          textStyling="text-fsize-p"
+          @click="downloadBtn"
+        />
         <Button
           content="Bib-Referenz"
           id="reference-button"
           textStyling="text-fsize-p"
           @click="toggleReference"
         />
-        TODO: PDF
-      </div> -->
+      </div>
       <div
         v-show="referenceBtnClicked"
         id="reference-section"
         class="flex w-3/4 flex-col gap-2 self-center rounded-lg border-2 border-text bg-secondary-transparent p-8"
       >
-        <!-- TODO: Nice to have: Copy fn -->
         <p class="text-text-transparent">BIB</p>
         <div id="reference" class="flex flex-col">
           <samp class="flex flex-col">
@@ -84,7 +87,7 @@
             >
             <span class="span-indent">location = {Chur},</span>
             <span class="span-indent"
-              >title = {(Audio-)visuelle Desinformation auf
+              >title = {(Audio-) visuelle Desinformation auf
               Social-Media-Plattformen in der Schweiz},</span
             >
             <span class="span-indent"
@@ -207,10 +210,17 @@ import LazyLinkPreview from "~/components/ui/link-preview/LazyLinkPreview.vue";
 const referenceBtnClicked = ref(false);
 function toggleReference() {
   referenceBtnClicked.value = !referenceBtnClicked.value;
+  if (referenceBtnClicked.value) {
+    window.open(
+      "/files/Yannick-Spriessler_(Audio-)-visuelle-Desinformation-auf-Social-Media-Plattformen-in-der-Schweiz_2025.bib",
+      "_self",
+    );
+  }
 }
 /* Download btn */
 const downloadBtn = () => {
-  window.open("/files/thesis.pdf", "_blank");
+  window.open("/files/yannickspriessler_bsc-thesis_SoMe.pdf", "_blank");
+  _paq.push(["trackEvent", "About", "Thesis Download", "PDF"]);
 };
 
 useSeoMeta({
