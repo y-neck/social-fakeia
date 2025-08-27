@@ -19,3 +19,5 @@ Diese Website wurde entwickelt als Bachelorprojekt durch [Yannick Spriessler](ht
 ### Verbesserungsbereiche
 - Detaillierte UI/UX-Planung im Vornherein erspart Zeit bei der Umsetzung
 - Mobile-First-Ansatz (TailwindCSS): konsequente Umsetzung von Anfang an verhindert späteren Anpassungsbedarf
+
+Für die Entwicklung wurde ChatGPT zuhilfe genommen. Der gesamte Chatverlauf findet sich hier:[ChatGPT-Chat](https://chatgpt.com/share/68823b39-a5fc-8007-8eb8-226ab48eb3f1)
