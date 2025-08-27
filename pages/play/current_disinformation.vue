@@ -131,7 +131,8 @@
           url="https://journals.ala.org/index.php/ltr/article/view/6497"
           class="underline"
           >emotional und provokativ gestaltet,</LinkPreview
-        > beispielsweise indem wütend oder enttäuscht über ein Thema berichtet
+        >
+        beispielsweise indem wütend oder enttäuscht über ein Thema berichtet
         wird. Dadurch soll die Falschinformation
         <LinkPreview url="https://doi.org/10.22572/mi.26.2.2" class="underline"
           >möglichst viel Aufmerksamkeit erregen,</LinkPreview
@@ -145,7 +146,10 @@
           Erwartungen geweckt und Orientierung geboten.</LinkPreview
         >
       </p>
-      <LazyAudioPlayer src="1835715834874405" title="Audio: Produktion von Desinformation" />
+      <LazyAudioPlayer
+        src="1835715834874405"
+        title="Audio: Produktion von Desinformation"
+      />
       <p>
         <LinkPreview
           url="https://doi.org/10.1108/JPBM-12-2018-2155"
@@ -213,11 +217,11 @@ import LazyCheckboxQuiz from "~/components/interaction/LazyCheckboxQuiz.vue";
 import LazyButton from "~/components/common/LazyButton.vue";
 
 useSeoMeta({
-  title: "Aktuelle Desinformation" /* Page title */,
-  ogTitle: "Aktuelle Desinformation" /* Page title without branding */,
+  title: "Produktion und Verbreitung" /* Page title */,
+  ogTitle: "Produktion und Verbreitung" /* Page title without branding */,
 });
 definePageMeta({
-  title: "Aktuelle Desinformation",
+  title: "Produktion und Verbreitung",
   layout: "game",
 });
 </script>

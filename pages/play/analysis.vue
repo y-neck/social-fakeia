@@ -184,11 +184,11 @@ import LazyButton from "~/components/common/LazyButton.vue";
 import LazyLinkPreview from "~/components/ui/link-preview/LazyLinkPreview.vue";
 
 useSeoMeta({
-  title: "Untersuchung" /* Page title */,
-  ogTitle: "Untersuchung" /* Page title without branding */,
+  title: "Hinweise auf Desinformation" /* Page title */,
+  ogTitle: "Hinweise auf Desinformation" /* Page title without branding */,
 });
 definePageMeta({
-  title: "Untersuchung",
+  title: "Hinweise auf Desinformation",
   layout: "game-nav",
 });
 </script>

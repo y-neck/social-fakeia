@@ -197,6 +197,7 @@
         </ul>
       </LazyCallout>
     </section>
+    <span>*Hinweis: Seit der Bewertung wurden einige Kleinigkeiten (bspw. Menüpunkte) aufgrund des Feedbacks angepasst. Die Website an sich ist jedoch immer noch gleich.</span>
   </div>
 </template>
 
