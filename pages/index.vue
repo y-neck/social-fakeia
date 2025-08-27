@@ -127,6 +127,13 @@
 import Callout from "~/components/layout/LazyCallout.vue";
 import Button from "~/components/common/LazyButton.vue";
 
+const startBtn = document.querySelector("#start-experience-button");
+onMounted(() => {
+  startBtn?.addEventListener("click", () => {
+    _paq.push(["trackEvent", "Start", "Start Btn clicked"])
+  })
+})
+
 useSeoMeta({
   title: "Social Fakeia",
   ogTitle: "Social Fakeia" /* Page title without branding */,
